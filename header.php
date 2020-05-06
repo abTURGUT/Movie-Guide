@@ -1,29 +1,7 @@
-<!--<head>
-   <title>Ninja Pizza</title>
-    Compiled and minified CSS 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <style type="text/css">
-     .brand{
-      background: #cbb09c !important;
-     }
-   .brand-text{
-      color: #cbb09c !important;
-   } 
-  </style>
-</head>
-<body class="grey lighten-4">
-   <nav class="white z-depth-0">
-    <div class="container">
-      <a href="#" class="brand-logo brand-text">TT Produksiyon</a>
-      <ul id="nav-mobile" class="right hide-on-small-and-down">
-        <li><a href="#" class="btn brand z-depth-0">Lahmacun</a></li>
-      </ul>
-    </div>
-  </nav>
--->
-
 <head>
    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+   <script src="functions.js"></script>
 </head>
 
 <body>
@@ -38,7 +16,7 @@
       <div class = "headerButton">Nafiz</div>
       <div class = "headerButton">Yusuf</div>
 
-      <div class = "loginButton"></div>
+      <div class = "loginButton" onclick=" loginButton()" ></div>
    </div>
 </body>
 
