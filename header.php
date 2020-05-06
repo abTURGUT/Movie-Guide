@@ -31,6 +31,14 @@
       <div class = "headerTitle">
          Movie Guide
       </div>
+
+      <div class = "headerButton">Tayyib</div>
+      <div class = "headerButton">Abdullah</div>
+      <div class = "headerButton">Erdem</div>
+      <div class = "headerButton">Nafiz</div>
+      <div class = "headerButton">Yusuf</div>
+
+      <div class = "loginButton"></div>
    </div>
 </body>
 

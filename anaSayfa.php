@@ -15,8 +15,7 @@
     </style>
     <?php include 'header.php';?>
     <div class="mainCanvas">
-        <div class="deneme1"></div>
-        <div class="deneme2"></div>
+      
     </div>
 
 

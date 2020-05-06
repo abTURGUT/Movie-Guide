@@ -14,24 +14,9 @@
             height:1000px;
             border: 6px solid #AAAAAA;
             background-color: #000000;
-            margin:20px auto;
+            margin:30px auto;
         }
 
-.deneme1{
-            width:304px;
-            height:300px;
-            border: 3px solid #AAAAAA;
-            margin:30px 20px;
-            float:left;
-        }
-
-.deneme2{
-            width:304px;
-            height:300px;
-            border:3px solid #AAAAAA;
-            margin:30px 20px;
-            float:right;
-        }
 .header{
         width:80%;
         height:175px;
@@ -47,6 +32,33 @@
         text-shadow: 10px 10px #123446;
         font-size: 64px;
         font-family: 'Fjalla One', sans-serif;
-        margin: 50px 50px;
+        margin: 10px 50px;
+
+}
+
+.headerButton{
+        width:150px;
+        height:60px;
+        border-radius: 10px;
+        border:3px solid #888888;
+        background-color: #333333;
+        margin:32px 20px;
+        float:left;
+        background-image: linear-gradient( #333333, rgb(39, 60, 71));
+
+        
+        font-size:25px;
+        color:rgb(255, 148, 219);
+        text-align:center;
+      
+}
+
+.loginButton{
+        width:100px;
+        height:60px;
+        border:1px solid #AAAAAA;
+        background-color: #222222;
+        margin: -50px 50px;
+        float:right;
 
 }
