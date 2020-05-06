@@ -19,6 +19,6 @@
         <div class="deneme2"></div>
     </div>
 
-   
+
 </body>
 </html>
