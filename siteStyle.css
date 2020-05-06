@@ -1,0 +1,52 @@
+.background{
+            width:100%;
+            height:100%;
+            border: 1px solid #AAAAAA;
+            margin: auto;
+            background-image: linear-gradient(to bottom right, #12567A, #5e87c1);
+
+}
+
+.mainCanvas{
+            border-radius: 25px;
+            width:80%;
+            opacity: 0.75;
+            height:1000px;
+            border: 6px solid #AAAAAA;
+            background-color: #000000;
+            margin:20px auto;
+        }
+
+.deneme1{
+            width:304px;
+            height:300px;
+            border: 3px solid #AAAAAA;
+            margin:30px 20px;
+            float:left;
+        }
+
+.deneme2{
+            width:304px;
+            height:300px;
+            border:3px solid #AAAAAA;
+            margin:30px 20px;
+            float:right;
+        }
+.header{
+        width:80%;
+        height:175px;
+        border:3px solid #888888;
+        background-color: #333333;
+        margin:20px auto;
+
+}
+
+.headerTitle{
+
+        color: #63C9FF;
+        text-shadow: 10px 10px #123446;
+        font-size: 64px;
+        font-family: 'Fjalla One', sans-serif;
+        margin: 50px 50px;
+
+}
