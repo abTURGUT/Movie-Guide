@@ -56,11 +56,12 @@
         $username = "pma";
         $password = "";
       
-        try{
+        
         
         $con = new PDO("mysql:host=$servername;dbname=$dbName",$username,$password);
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
+        try{
         $filmsSql = "CREATE TABLE films (
 
                 id VARCHAR(50) PRIMARY KEY,
@@ -75,6 +76,11 @@
                 fimage blob NOT NULL,
                 reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
 
+        $con->exec($filmsSql);
+
+         } catch (Exception $ex) {echo "films already exist";}
+
+         try{
         $commentsSql = "CREATE TABLE comments (
 
                 id VARCHAR(50) PRIMARY KEY,
@@ -82,13 +88,24 @@
                 comment VARCHAR(200) NOT NULL,     
                 reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
 
-        
-        $con->exec($filmsSql);
         $con->exec($commentsSql);
-        echo 'Table Tablo1 created.';
-        } catch (Exception $ex) {
-        echo "Table Tablo1 not created" . $ex->getMessage();
-        }
+
+        } catch (Exception $ex) {echo "comments already exist";}
+
+        try{
+        $userSql = "CREATE TABLE users (
+
+                id int(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,  
+                nickname VARCHAR(200) NOT NULL,        
+                email VARCHAR(200) NOT NULL,     
+                userpassword VARCHAR(200) NOT NULL,     
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
+
+        $con->exec($userSql);
+
+        } catch (Exception $ex) {echo "users already exist";}
+        
+        
        
         ?>
       

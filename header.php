@@ -10,13 +10,25 @@
          Movie Guide
       </div>
 
-      <div class = "headerButton">Tayyib</div>
-      <div class = "headerButton">Abdullah</div>
-      <div class = "headerButton">Erdem</div>
-      <div class = "headerButton">Nafiz</div>
-      <div class = "headerButton">Yusuf</div>
+      <div class = "headerButton">
+         <p id="center">Abdullah</p>
+      </div>
+      <div class = "headerButton">
+         <p id="center">Tayyib</p>
+      </div>
+      <div class = "headerButton">
+         <p id="center">Yusuf</p>
+      </div>
+      <div class = "headerButton">
+         <p id="center">Erdem</p>
+      </div>
+      <div class = "headerButton">
+         <p id="center">Nafiz</p>
+      </div>
 
-      <div class = "loginButton" onclick=" loginButton()" ></div>
+      <div  class = "loginButton" onclick=" loginButton()" >
+         <p id="center">sign in / sign out</p>
+      </div>
    </div>
 </body>
 
