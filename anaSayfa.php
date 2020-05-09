@@ -50,35 +50,48 @@
 
 <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signUpSubmit'])){
+
             	$servername = "localhost";
           		$username = "pma";
          		$password = "";
          		$dbname = "attb_db";
-				try {
-					$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-					$name = $_POST['nN'];
-					$email = $_POST['eM'];
-					$pass = $_POST['pW'];
+         		$connection = mysqli_connect('localhost',$username,$password,$dbname);
 
+         		$name = $_POST['nN'];
+				$email = $_POST['eM'];
+				$pass = $_POST['pW'];
 
-					$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('$name', '$email', '$pass')";
-					$conn->exec($sql);
-					$last_id = $conn->lastInsertId();
-					
-					session_start();
-					header('Location: anaSayfa.php');
+				//Check for duplicate username or email.
+				$myQuery = "SELECT * FROM users WHERE nickname = '$name'";
+				$result = mysqli_query($connection,$myQuery);
+				$myQuery2 = "SELECT * FROM users WHERE email = '$email'";
+				$result2 = mysqli_query($connection,$myQuery2);
+				if(mysqli_num_rows($result) > 0 || mysqli_num_rows($result2) > 0){
+					echo '<script>alert("DUPLICATE");</script>';
 	            	exit;
-
-				} 
-				catch (PDOException $e) {
-					echo $sql . "<br>" . $e->getMessage();
 				}
-				$conn = null;
-          		$conn->exec($sql);
+				else{
+					try {
+						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		
+		
+						$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('$name', '$email', '$pass')";
+						$conn->exec($sql);
+						$last_id = $conn->lastInsertId();
+						
+						session_start();
+						header('Location: anaSayfa.php');
+		            	exit;
 
-          		
+					} 
+					catch (PDOException $e) {
+						echo $sql . "<br>" . $e->getMessage();
+					}
+					$conn = null;
+	          		$conn->exec($sql);
+
+          		}
 
             }
 
