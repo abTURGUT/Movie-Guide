@@ -30,7 +30,7 @@
         placeholder="User Name">
         <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput'placeholder="Password">
         <div id = 'loginError'> 
-        	<?php if(isset($_SESSION['error'])) { echo $_SESSION['error']; } ?> 
+        	<?php if(isset($_SESSION['error']) && $_SESSION['error'] != "") { echo $_SESSION['error']; } ?> 
         </div>
         <input id = 'loginSubmit' name="loginSubmit" type = 'submit' class = 'loginSubmit' value = 'Sign In'  onclick="signIn();">
        
@@ -47,14 +47,17 @@
 
         <div id = 'signUpError'> wrong! </div>
         <input id = 'signUpSubmit' name = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up'>
-
     </form>
     <input id = 'signIn' name="btn"; type = 'submit' class = 'signUpSubmit' value = 'Sign In' onclick="">
     </div>
-<?php if(isset($_SESSION['error'])) { 
-	echo "<script>loginButton();</script>";
-	echo "<script>document.getElementById('loginError').style.visibility = 'visible';</script>"; 
-}?> 
+
+	<?php if(isset($_SESSION['error']) && $_SESSION['error'] != null) { 
+		//If 'error' is defined and not empty then open the login panel and show the error
+		echo "<script>loginButton();</script>";
+		echo "<script>document.getElementById('loginError').style.visibility = 'visible';</script>"; 
+		//After writing the error clear it so it won't show when the user reloads
+		echo $_SESSION['error'] = "";
+	}?> 
 
 <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loginSubmit'])){
@@ -74,21 +77,21 @@
 				$result = mysqli_query($connection,$myQuery);
 				
 				if(mysqli_num_rows($result) <= 0){
-					$_SESSION['error'] = 'NEIN';
-					/*echo "<script>document.getElementById('loginError').innerHTML = 'nein'; 
-							<script>document.getElementById('loginError').display = 'block';</script>";*/
+					$_SESSION['error'] = 'Wrong User Name!';
+					header('Location: anaSayfa.php');
 	            	exit;
 				}
 				else {
 					$row = mysqli_fetch_assoc($result);
 					$dbpassword = $row['userpassword']; 
 					if($pass==$dbpassword){
-						echo '<script>alert("success login!!");</script>';
+						//If the user logs in
 						startSession($name);
 	            	exit;
 					}
 					else{
-						echo '<script>alert("wrong password!!");</script>';
+						$_SESSION['error'] = 'Wrong Password!';
+						header('Location: anaSayfa.php');
 					}
 				}
 				
@@ -141,7 +144,7 @@
           		}
 
             }
-
+            //LOG IN HANDLER
             function startSession($name){
             	session_start();
             	$_SESSION["signedIn"] = true;
@@ -163,7 +166,6 @@
 
             if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logOutButton']) && 
             	isset($_SESSION['signedIn']) && $_SESSION['signedIn']) {
-            	echo '<script>alert("DESTROYED");</script>';
          		$_SESSION['signedIn'] = false;
          		session_destroy();
          		header('Location: anaSayfa.php');
