@@ -28,7 +28,8 @@
         <div id = 'userLogin'> User Login </div>
         <input id = 'loginName' name="loginName" type = 'text' class = 'loginInput' 
         placeholder="User Name" <?php if (isset($_SESSION['errorUserName'])) {echo " value='" . $_SESSION['errorUserName'] . "' "; $_SESSION['errorUserName']="";}?>>
-        <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput'placeholder="Password">
+        <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput' 
+		placeholder="Password" <?php if (isset($_SESSION['errorPassword'])) {echo " value='" . $_SESSION['errorPassword'] . "' "; $_SESSION['errorPassword']="";}?>>
         <div id = 'loginError'> 
         	<?php if(isset($_SESSION['error']) && $_SESSION['error'] != "") { echo $_SESSION['error']; } ?> 
         </div>
@@ -58,6 +59,8 @@
 		
 		//After writing the error clear it so it won't show when the user reloads
 		echo $_SESSION['error'] = "";
+		echo $_SESSION['errorUserName'] = "";
+		echo $_SESSION['errorPassword'] = "";
 	}?> 
 
 <?php
@@ -80,6 +83,7 @@
 				if(mysqli_num_rows($result) <= 0){
 					$_SESSION['error'] = 'Wrong User Name!';
 					$_SESSION['errorUserName'] = $name;
+					$_SESSION['errorPassword'] = $pass;
 					header('Location: anaSayfa.php');
 	            	exit;
 				}
@@ -93,6 +97,8 @@
 					}
 					else{
 						$_SESSION['error'] = 'Wrong Password!';
+						$_SESSION['errorUserName'] = $name;
+						$_SESSION['errorPassword'] = $pass;
 						header('Location: anaSayfa.php');
 					}
 				}

@@ -24,7 +24,7 @@
       <div class = "headerButton">
          <p id="center">Nafiz</p>
       </div>
-      <div id = 'loginButton' class = "loginButton" onclick=" loginButton()">
+      <div id = 'loginButton' class = "loginButton" onclick="loginButton('clearInput')">
          <p id="center"> 
             <?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { 
                      echo $_SESSION['username'];
