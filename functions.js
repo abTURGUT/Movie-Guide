@@ -1,4 +1,7 @@
+
+
 function loginButton(){
+
 	document.getElementById('blocked').style.display = 'block';
 	document.getElementById('loginPanel').style.display = 'block';
 	document.getElementById("signUpPanel").style.display="none"; 
@@ -11,6 +14,10 @@ function loginButton(){
 
 	
 
+}
+
+function logOut(){
+	document.getElementById('loginButton').style.display = 'block';
 }
 
 function signUpButton(){

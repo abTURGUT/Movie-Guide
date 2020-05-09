@@ -9,6 +9,7 @@
 </head>
 
 <body id = 'body'>
+	<?php session_start(); ?>
     
     <style>
     body {
@@ -22,13 +23,17 @@
 
     <div id="blocked" class = 'blocked'  onclick="loginExit();"></div>
     <div id="loginPanel" class = 'loginPanel' onclick="">
+    	
 		<form name="signInForm" id="signInForm" method="post" onsubmit = "return signIn();" action="<?php $_SERVER['PHP_SELF'];?>" >
         <div id = 'userLogin'> User Login </div>
         <input id = 'loginName' name="loginName" type = 'text' class = 'loginInput' 
         placeholder="User Name">
         <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput'placeholder="Password">
-        <div id = 'loginError'> wrong! </div>
+        <div id = 'loginError'> 
+        	<?php if(isset($_SESSION['error'])) { echo $_SESSION['error']; } ?> 
+        </div>
         <input id = 'loginSubmit' name="loginSubmit" type = 'submit' class = 'loginSubmit' value = 'Sign In'  onclick="signIn();">
+       
 		</form>
         <input id = 'signUp' type = 'submit' class = 'signUpSubmit' value = 'Sign Up' onclick="signUpButton();">
 		
@@ -46,6 +51,10 @@
     </form>
     <input id = 'signIn' name="btn"; type = 'submit' class = 'signUpSubmit' value = 'Sign In' onclick="">
     </div>
+<?php if(isset($_SESSION['error'])) { 
+	echo "<script>loginButton();</script>";
+	echo "<script>document.getElementById('loginError').style.visibility = 'visible';</script>"; 
+}?> 
 
 <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loginSubmit'])){
@@ -65,7 +74,9 @@
 				$result = mysqli_query($connection,$myQuery);
 				
 				if(mysqli_num_rows($result) <= 0){
-					echo '<script>alert("wrong username!");</script>';
+					$_SESSION['error'] = 'NEIN';
+					/*echo "<script>document.getElementById('loginError').innerHTML = 'nein'; 
+							<script>document.getElementById('loginError').display = 'block';</script>";*/
 	            	exit;
 				}
 				else {
@@ -73,6 +84,7 @@
 					$dbpassword = $row['userpassword']; 
 					if($pass==$dbpassword){
 						echo '<script>alert("success login!!");</script>';
+						startSession($name);
 	            	exit;
 					}
 					else{
@@ -130,8 +142,39 @@
 
             }
 
-             
-        
+            function startSession($name){
+            	session_start();
+            	$_SESSION["signedIn"] = true;
+                $_SESSION["username"] = $name;
+
+                //COOKIE
+
+
+
+                header('Location: anaSayfa.php');
+                /*echo "<script type='text/javascript'>
+                                document.getElementById('logOutButton').style.display = 'block';
+                                document.getElementById('loginButton').style.display = 'none';
+                                </script>";*/
+
+            }
+
+            
+
+            if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logOutButton']) && 
+            	isset($_SESSION['signedIn']) && $_SESSION['signedIn']) {
+            	echo '<script>alert("DESTROYED");</script>';
+         		$_SESSION['signedIn'] = false;
+         		session_destroy();
+         		header('Location: anaSayfa.php');
+      		}
+
+   //          if(isset($_SESSION["signedIn"]) && $_SESSION["signedIn"]) {
+			//     echo '<script>alert("HELLO");</script>';
+			// }
+			// else
+			// 	echo '<script>alert("NELLO");</script>';
+       
         
         ?>
 
