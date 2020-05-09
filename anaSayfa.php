@@ -27,7 +27,7 @@
 		<form name="signInForm" id="signInForm" method="post" onsubmit = "return signIn();" action="<?php $_SERVER['PHP_SELF'];?>" >
         <div id = 'userLogin'> User Login </div>
         <input id = 'loginName' name="loginName" type = 'text' class = 'loginInput' 
-        placeholder="User Name">
+        placeholder="User Name" <?php if (isset($_SESSION['errorUserName'])) {echo " value='" . $_SESSION['errorUserName'] . "' "; $_SESSION['errorUserName']="";}?>>
         <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput'placeholder="Password">
         <div id = 'loginError'> 
         	<?php if(isset($_SESSION['error']) && $_SESSION['error'] != "") { echo $_SESSION['error']; } ?> 
@@ -55,6 +55,7 @@
 		//If 'error' is defined and not empty then open the login panel and show the error
 		echo "<script>loginButton();</script>";
 		echo "<script>document.getElementById('loginError').style.visibility = 'visible';</script>"; 
+		
 		//After writing the error clear it so it won't show when the user reloads
 		echo $_SESSION['error'] = "";
 	}?> 
@@ -72,12 +73,13 @@
          		$name = $_POST['loginName'];
 				$pass = $_POST['loginPassword'];
 
-				//Check for duplicate username or email.
+				//if there is not the user name
 				$myQuery = "SELECT * FROM users WHERE nickname = '$name'";
 				$result = mysqli_query($connection,$myQuery);
 				
 				if(mysqli_num_rows($result) <= 0){
 					$_SESSION['error'] = 'Wrong User Name!';
+					$_SESSION['errorUserName'] = $name;
 					header('Location: anaSayfa.php');
 	            	exit;
 				}

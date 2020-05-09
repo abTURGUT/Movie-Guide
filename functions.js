@@ -9,7 +9,7 @@ function loginButton(){
 	document.getElementById("loginError").style.visibility="hidden"; 
 	
 
-	document.getElementById('loginName').value = "";
+	//document.getElementById('loginName').value = "";
 	document.getElementById('loginPassword').value = "";
 
 	
