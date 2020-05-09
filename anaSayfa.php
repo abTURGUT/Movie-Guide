@@ -55,32 +55,26 @@
          		$password = "";
          		$dbname = "attb_db";
 				try {
-					$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-					$name = $_POST['nN'];
-					$email = $_POST['eM'];
-					$pass = $_POST['pW'];
+				$name = $_POST['nN'];
+				$email = $_POST['eM'];
+				$pass = $_POST['pW'];
 
 
-					$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('$name', '$email', '$pass')";
-					$conn->exec($sql);
-					$last_id = $conn->lastInsertId();
-					
-					session_start();
-					header('Location: anaSayfa.php');
-	            	exit;
-
-				} 
-				catch (PDOException $e) {
-					echo $sql . "<br>" . $e->getMessage();
+				$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('$name', '$email', '$pass')";
+				$conn->exec($sql);
+				$last_id = $conn->lastInsertId();
+				echo "New record created successfully. Last inserted ID is: " . $last_id;
+				} catch (PDOException $e) {
+				echo $sql . "<br>" . $e->getMessage();
 				}
 				$conn = null;
           		$conn->exec($sql);
 
-          		
-
             }
+            header('Location: '.$_SERVER['PHP_SELF']);
 
              
         
