@@ -33,21 +33,22 @@ function signIn(){
 	if(/^[a-zA-Z0-9- ,_]*$/.test(name) == false){
 		document.getElementById("loginError").innerHTML = 'you can not use special characters!'; 
 		document.getElementById("loginError").style.visibility="visible";
-		return; 
+		return false;
 	}
 	if(name.length<=0){
 		document.getElementById("loginError").innerHTML = 'name can not be empty!'; 
 		document.getElementById("loginError").style.visibility="visible";
-		return;
+		return false;
 	}
 	if(password.length<=0){
 		document.getElementById("loginError").innerHTML = 'password can not be empty!'; 
 		document.getElementById("loginError").style.visibility="visible"; 
-		return;
+		return false;
 	}
 
+	
 	document.getElementById("loginError").style.visibility="hidden"; 
-
+	return true;
 
 }
 

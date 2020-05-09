@@ -22,17 +22,16 @@
 
     <div id="blocked" class = 'blocked'  onclick="loginExit();"></div>
     <div id="loginPanel" class = 'loginPanel' onclick="">
-
+		<form name="signInForm" id="signInForm" method="post" onsubmit = "return signIn();" action="<?php $_SERVER['PHP_SELF'];?>" >
         <div id = 'userLogin'> User Login </div>
-
-        <input id = 'loginName' type = 'text' class = 'loginInput' 
+        <input id = 'loginName' name="loginName" type = 'text' class = 'loginInput' 
         placeholder="User Name">
-        <input id = 'loginPassword' type = 'password' class = 'loginInput'placeholder="Password">
-
+        <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput'placeholder="Password">
         <div id = 'loginError'> wrong! </div>
-        
-        <input id = 'loginSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign In'  onclick="signIn();">
+        <input id = 'loginSubmit' name="loginSubmit" type = 'submit' class = 'loginSubmit' value = 'Sign In'  onclick="signIn();">
+		</form>
         <input id = 'signUp' type = 'submit' class = 'signUpSubmit' value = 'Sign Up' onclick="signUpButton();">
+		
     </div>
     <div id="signUpPanel" class = 'signUpPanel' onclick="">
 		<form name="signUpForm" id="signUpForm" method="post" onsubmit = "return signUp();" action="<?php $_SERVER['PHP_SELF'];?>" >
@@ -49,7 +48,43 @@
     </div>
 
 <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signUpSubmit'])){
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loginSubmit'])){
+
+            	$servername = "localhost";
+          		$username = "pma";
+         		$password = "";
+         		$dbname = "attb_db";
+
+         		$connection = mysqli_connect('localhost',$username,$password,$dbname);
+
+         		$name = $_POST['loginName'];
+				$pass = $_POST['loginPassword'];
+
+				//Check for duplicate username or email.
+				$myQuery = "SELECT * FROM users WHERE nickname = '$name'";
+				$result = mysqli_query($connection,$myQuery);
+				
+				if(mysqli_num_rows($result) <= 0){
+					echo '<script>alert("wrong username!");</script>';
+	            	exit;
+				}
+				else {
+					$row = mysqli_fetch_assoc($result);
+					$dbpassword = $row['userpassword']; 
+					if($pass==$dbpassword){
+						echo '<script>alert("success login!!");</script>';
+	            	exit;
+					}
+					else{
+						echo '<script>alert("wrong password!!");</script>';
+					}
+				}
+				
+				
+			}
+			
+
+			if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signUpSubmit'])){
 
             	$servername = "localhost";
           		$username = "pma";
