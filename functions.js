@@ -52,19 +52,19 @@ function signIn(){
 }
 
 function signUp(){
-	var nickanme = document.getElementById('nickName').value;
+	var nickname = document.getElementById('nickName').value;
 	var email = document.getElementById('email').value;
 	var password = document.getElementById('password').value;
 
 
-	if(/^[a-zA-Z0-9- ,_]*$/.test(nickanme) == false){
+	if(/^[a-zA-Z0-9- ,_]*$/.test(nickname) == false){
 		document.getElementById("signUpError").innerHTML = 'you can not use special characters!'; 
 		document.getElementById("signUpError").style.visibility="visible";
 		return false;
 	}
 
-	if(nickanme.length<=0){
-		document.getElementById("signUpError").innerHTML = 'nickanme can not be empty!'; 
+	if(nickname.length<=0){
+		document.getElementById("signUpError").innerHTML = 'nickname can not be empty!'; 
 		document.getElementById("signUpError").style.visibility="visible";
 		return false;
 	}

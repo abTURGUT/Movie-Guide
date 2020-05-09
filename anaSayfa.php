@@ -7,6 +7,36 @@
         <meta name="viewport" content="width = device-width, initial-scale =1.">
 
 </head>
+ <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signUpForm'])){
+            	$servername = "localhost";
+          		$username = "pma";
+         		$password = "";
+         		$dbname = "attb_db";
+				try {
+				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+				$name = $_POST['nN'];
+				$email = $_POST['eM'];
+				$pass = $_POST['pW'];
+
+				$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('he', 'he', 'he')";
+				$conn->exec($sql);
+				$last_id = $conn->lastInsertId();
+				echo "New record created successfully. Last inserted ID is: " . $last_id;
+				} catch (PDOException $e) {
+				echo $sql . "<br>" . $e->getMessage();
+				}
+				$conn = null;
+          		$conn->exec($sql);
+            }
+
+
+             
+        
+        
+        ?>
 <body id = 'body'>
     
     <style>
@@ -37,36 +67,19 @@
 
         <div id = 'userLogin'> User Sign Up </div>
 
-        <input id = 'nickName' type = 'text' class = 'loginInput' 
-        placeholder="User Name">
-        <input id = 'email' type = 'text' class = 'loginInput'placeholder="E-mail">
-        <input id = 'password' type = 'password' class = 'loginInput'placeholder="Password">
+		<form name="signUpForm" id="signUpForm" method="post"  >
+
+        <input id = 'nickName' name = 'nN' type = 'text' class = 'loginInput' placeholder="User Name">
+        <input id = 'email' name = 'eM' type = 'text' class = 'loginInput'placeholder="E-mail">
+        <input id = 'password' name = 'pW' type = 'password' class = 'loginInput'placeholder="Password">
 
         <div id = 'signUpError'> wrong! </div>
-        
-        <form name="testForm" id="testForm"  method="POST" >
-        <input id = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up'  onclick=" return signUpPhp();">
-        </form>
+        <input id = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up'>
         <input id = 'signIn' name="btn"; type = 'submit' class = 'signUpSubmit' value = 'Sign In' onclick="">
+    </form>
     </div>
 
-  
-        <?php
-        
-            if($_POST['btn']){
-                echo "
-                <script type=\"text/javascript\">
-                document.getElementById('loginPanel').style.display = 'hidden';
-                </script>
-            ";
-            }
-               
-             
-        
-        
-        ?>
-    
- 
+
 
 </body>
 </html>
