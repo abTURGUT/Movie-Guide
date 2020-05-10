@@ -49,9 +49,11 @@
         <div id = 'signUpError'> wrong! </div>
         <input id = 'signUpSubmit' name = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up'>
     </form>
-    <input id = 'signIn' name="btn"; type = 'submit' class = 'signUpSubmit' value = 'Sign In' onclick="">
+    <input id = 'signIn' name="btn"; type = 'submit' class = 'signUpSubmit' value = 'Sign In' onclick="loginButton('clearInput')">
     </div>
 
+    <div id = "accountName" class = "invisible"><?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { echo $_SESSION['username']; }else echo '' ?></div>
+                  
 	<?php if(isset($_SESSION['error']) && $_SESSION['error'] != null) { 
 		//If 'error' is defined and not empty then open the login panel and show the error
 		echo "<script>loginButton();</script>";

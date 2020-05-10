@@ -1,18 +1,19 @@
 
 
 function loginButton(status){
+	if(document.getElementById('loginButtonText').innerHTML.trim() != document.getElementById('accountName').innerHTML.trim()){
 
-	document.getElementById('blocked').style.display = 'block';
-	document.getElementById('loginPanel').style.display = 'block';
-	document.getElementById("signUpPanel").style.display="none"; 
-	document.getElementById('body').style.overflow = 'hidden';
-	document.getElementById("loginError").style.visibility="hidden"; 
+		document.getElementById('blocked').style.display = 'block';
+		document.getElementById('loginPanel').style.display = 'block';
+		document.getElementById("signUpPanel").style.display="none"; 
+		document.getElementById('body').style.overflow = 'hidden';
+		document.getElementById("loginError").style.visibility="hidden"; 
 
-	if(status=="clearInput"){
-		document.getElementById('loginName').value = "";
-		document.getElementById('loginPassword').value = "";
+		if(status=="clearInput"){
+			document.getElementById('loginName').value = "";
+			document.getElementById('loginPassword').value = "";
+		}
 	}
-
 	
 
 	

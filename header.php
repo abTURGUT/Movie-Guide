@@ -25,11 +25,11 @@
          <p id="center">Nafiz</p>
       </div>
       <div id = 'loginButton' class = "loginButton" onclick="loginButton('clearInput')">
-         <p id="center"> 
+         <p id="loginButtonText"> 
             <?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { 
                      echo $_SESSION['username'];
                   } 
-                  else echo 'Sign In  / Up' ?></p>
+                  else echo 'Sign In / Up' ?></p>
       </div>
       <form name="logOutForm" id="logOutForm" method="post" onclick=" logOut()" action="<?php $_SERVER['PHP_SELF'];?>" >
       <input type = "submit" id= "logOutButton" name = "logOutButton" class = "headerLogOut" value="Log Out">

@@ -1,6 +1,9 @@
 #center{
         margin:auto;
 }
+#loginButtonText{
+        margin:auto;
+}
 
 .background{
             width:100%;
@@ -230,3 +233,6 @@ div#signUpError{
     }
     
 
+.invisible{
+    display:none;
+}
