@@ -9,7 +9,9 @@
 </head>
 
 <body id = 'body'>
-	<?php session_start(); ?>
+	<?php
+		session_start();
+	?>
     
     <style>
     body {
@@ -19,18 +21,27 @@
     </style>
     <?php include 'header.php';?>
     <div class="mainCanvas">
-    	<!-- <?php 
-    		for($var = 0; $var < 3; $var++){
-    			echo '<div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
+    	<div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
     		<div id = "homeFilmInformation" class = "homeFilmInformation">
-    			
+    			<
     		</div>
     		<div id = "homeFilmImage" class = "homeFilmImage" >
-    			<img class = "img" src="AbdullahT.jpg" alt="Abdullah"  width="auto" height="auto" >
+
     		</div>
-    	</div>';
-    		}
-    	?> -->
+    	</div>
+    	<?php 
+    		// for($var = 0; $var < 3; $var++){
+    		// 	echo '
+    			// <div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
+    			// 	<div id = "homeFilmInformation" class = "homeFilmInformation">
+    			
+    			// 	</div>
+    			// 	<div id = "homeFilmImage" class = "homeFilmImage" >
+    			// 		<img class = "img" src="AbdullahT.jpg" alt="Abdullah"  width="auto" height="auto">
+    			// 	</div>
+    			// </div>';
+    		// }
+    	?>
     </div>
     
 
@@ -42,14 +53,14 @@
 
         <input id = 'loginName' name="loginName" type = 'text' class = 'loginInput' 
         placeholder="User Name" 
-        <?php if (isset($_SESSION['errorUserName'])) {echo " value='" . $_SESSION['errorUserName'] . "' "; $_SESSION['errorUserName']="";}?>>
+        <?php if(isset($_SESSION['errorUserName'])) {echo " value='" . $_SESSION['errorUserName'] . "' "; $_SESSION['errorUserName']="";}?>>
 
         <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput' 
 		placeholder="Password" 
-		<?php if (isset($_SESSION['errorPassword'])) {echo " value='" . $_SESSION['errorPassword'] . "' "; $_SESSION['errorPassword']="";}?>>
+		<?php if(isset($_SESSION['errorPassword'])) {echo " value='" . $_SESSION['errorPassword'] . "' "; $_SESSION['errorPassword']="";}?>>
 
         <div id = 'loginError'>
-        	<?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != "") { echo $_SESSION['loginError']; } else echo 'placeholder' ?> 
+        <?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != "") { echo $_SESSION['loginError']; } else echo 'placeholder'; ?> 
         </div>
 
         <input id = 'loginSubmit' name="loginSubmit" type = 'submit' class = 'loginSubmit' value = 'Sign In'  onclick="signIn();">
@@ -62,18 +73,18 @@
 		<form name="signUpForm" id="signUpForm" method="post" onsubmit = "return signUp();" action="<?php $_SERVER['PHP_SELF'];?>" >
 		<div id = 'userLogin'> User Sign Up </div>
 
-        <input id = 'nickName' name = 'nN' type = 'text' class = 'loginInput' placeholder="User Name" 
-        <?php if (isset($_SESSION['errorSUserName'])) {echo " value='" . $_SESSION['errorSUserName'] . "' "; $_SESSION['errorSUserName']="";}?>>
+        <input id = 'nickName' name = 'nN' type = 'text' class = 'loginInput' placeholder="User Name"
+        <?php if(isset($_SESSION['errorSUserName'])) {echo " value='" . $_SESSION['errorSUserName'] . "' "; $_SESSION['errorSUserName']="";}?>>
 
         <input id = 'email' name = 'eM' type = 'text' class = 'loginInput'placeholder="E-mail" 
-        <?php if (isset($_SESSION['errorSEmail'])) {echo " value='" . $_SESSION['errorSEmail'] . "' "; $_SESSION['errorSEmail']="";}?>>
+        <?php if(isset($_SESSION['errorSEmail'])) {echo " value='" . $_SESSION['errorSEmail'] . "' "; $_SESSION['errorSEmail']="";}?>>
 
         <input id = 'password' name = 'pW' type = 'password' class = 'loginInput'placeholder="Password" 
-        <?php if (isset($_SESSION['errorSPassword'])) {echo " value='" . $_SESSION['errorSPassword'] . "' "; $_SESSION['errorSPassword']="";}?>>
+        <?php if(isset($_SESSION['errorSPassword'])) {echo " value='" . $_SESSION['errorSPassword'] . "' "; $_SESSION['errorSPassword']="";}?>>
 
 
         <div id = 'signUpError'>
-        	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != "") { echo $_SESSION['signUpError']; } else echo 'placeholder' ?> 
+        	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != "") { echo $_SESSION['signUpError']; } else echo 'placeholder'; ?> 
         </div>
 
         <input id = 'signUpSubmit' name = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up'>
@@ -208,13 +219,11 @@
             }
             //LOG IN HANDLER
             function startSession($name){
-            	session_start();
+            	//session_start();
             	$_SESSION["signedIn"] = true;
                 $_SESSION["username"] = $name;
 
                 //COOKIE
-
-
 
                 header('Location: anaSayfa.php');
                 /*echo "<script type='text/javascript'>
