@@ -10,19 +10,25 @@
          Movie Guide
       </div>
       <div class = "headerButton">
-         <p id="center">Abdullah</p>
+         <p id="center">Home</p>
       </div>
       <div class = "headerButton">
-         <p id="center">Tayyib</p>
+         <p id="center">Top 5</p>
       </div>
       <div class = "headerButton">
-         <p id="center">Yusuf</p>
+         <p id="center">Science Fiction</p>
       </div>
       <div class = "headerButton">
-         <p id="center">Erdem</p>
+         <p id="center">Horror</p>
       </div>
       <div class = "headerButton">
-         <p id="center">Nafiz</p>
+         <p id="center">Romantic</p>
+      </div>
+      <div class = "headerButton">
+         <p id="center">Action</p>
+      </div>
+      <div class = "headerButton">
+         <p id="center">Drama</p>
       </div>
       <div id = 'loginButton' class = "loginButton" onclick="loginButton('clearInput')">
          <p id="loginButtonText"> 
@@ -32,10 +38,10 @@
                   else echo 'Sign In / Up' ?></p>
       </div>
       <form name="logOutForm" id="logOutForm" method="post" onclick=" logOut()" action="<?php $_SERVER['PHP_SELF'];?>" >
-      <input type = "submit" id= "logOutButton" name = "logOutButton" class = "headerLogOut" value="Log Out">
+         <input type = "submit" id= "logOutButton" name = "logOutButton" class = "headerLogOut" value="Log Out">
       </form>
-      <?php if(!isset($_SESSION['signedIn']) || !$_SESSION['signedIn']) { 
-                    echo "<script> document.getElementById('logOutButton').style.display = 'none';</script>";
+      <?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { 
+                    echo "<script> document.getElementById('logOutButton').style.display = 'flex';</script>";
                   }?>
    </div>
 </body>

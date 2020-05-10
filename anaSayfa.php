@@ -14,12 +14,25 @@
     <style>
     body {
         overflow: visible;
-        background-image: linear-gradient(to bottom right, #12567A, #5e87c1);
+        background-image: linear-gradient(to bottom right, #610680, #27002B);
     }
     </style>
     <?php include 'header.php';?>
     <div class="mainCanvas">
+    	<!-- <?php 
+    		for($var = 0; $var < 3; $var++){
+    			echo '<div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
+    		<div id = "homeFilmInformation" class = "homeFilmInformation">
+    			
+    		</div>
+    		<div id = "homeFilmImage" class = "homeFilmImage" >
+    			<img class = "img" src="AbdullahT.jpg" alt="Abdullah"  width="auto" height="auto" >
+    		</div>
+    	</div>';
+    		}
+    	?> -->
     </div>
+    
 
     <div id="blocked" class = 'blocked'  onclick="loginExit();"></div>
     <div id="loginPanel" class = 'loginPanel' onclick="">
@@ -35,8 +48,8 @@
 		placeholder="Password" 
 		<?php if (isset($_SESSION['errorPassword'])) {echo " value='" . $_SESSION['errorPassword'] . "' "; $_SESSION['errorPassword']="";}?>>
 
-        <div id = 'loginError'> placeholder
-        	<?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != "") { echo $_SESSION['loginError']; } ?> 
+        <div id = 'loginError'>
+        	<?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != "") { echo $_SESSION['loginError']; } else echo 'placeholder' ?> 
         </div>
 
         <input id = 'loginSubmit' name="loginSubmit" type = 'submit' class = 'loginSubmit' value = 'Sign In'  onclick="signIn();">
@@ -59,8 +72,8 @@
         <?php if (isset($_SESSION['errorSPassword'])) {echo " value='" . $_SESSION['errorSPassword'] . "' "; $_SESSION['errorSPassword']="";}?>>
 
 
-        <div id = 'signUpError'>placeholder
-        	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != "") { echo $_SESSION['signUpError']; } ?> 
+        <div id = 'signUpError'>
+        	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != "") { echo $_SESSION['signUpError']; } else echo 'placeholder' ?> 
         </div>
 
         <input id = 'signUpSubmit' name = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up'>
@@ -70,7 +83,8 @@
 
     <div id = "accountName" class = "invisible"><?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { echo $_SESSION['username']; }else echo '' ?></div>
                   
-	<?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != null) { 
+	<?php 
+	if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != null) { 
 		//If 'loginError' is defined and not empty then open the login panel and show the error
 		echo "<script>loginButton();</script>";
 		echo "<script>document.getElementById('loginError').style.visibility = 'visible';</script>"; 
@@ -79,8 +93,8 @@
 		echo $_SESSION['loginError'] = "";
 		echo $_SESSION['errorUserName'] = "";
 		echo $_SESSION['errorPassword'] = "";
-	}?> 
-	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != null) { 
+	} 
+	if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != null) { 
 		//If 'loginError' is defined and not empty then open the login panel and show the error
 		echo "<script>signUpButton();</script>";
 		echo "<script>document.getElementById('signUpError').style.visibility = 'visible';</script>"; 
@@ -155,7 +169,7 @@
 				$myQuery2 = "SELECT * FROM users WHERE email = '$email'";
 				$result2 = mysqli_query($connection,$myQuery2);
 				if(mysqli_num_rows($result) > 0){
-					$_SESSION['signUpError'] = 'An account with that username already exists!';
+					$_SESSION['signUpError'] = 'Username already exists!';
 					$_SESSION['errorSUserName'] = $name;
 					$_SESSION['errorSEmail'] = $email;
 					$_SESSION['errorSPassword'] = $pass;
@@ -163,7 +177,7 @@
 	            	exit;
 				}
 				else if(mysqli_num_rows($result2) > 0){
-					$_SESSION['signUpError'] = 'An account with that email already exists!';
+					$_SESSION['signUpError'] = 'Email already exists!';
 					$_SESSION['errorSUserName'] = $name;
 					$_SESSION['errorSEmail'] = $email;
 					$_SESSION['errorSPassword'] = $pass;
@@ -177,9 +191,7 @@
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		
 		
 						$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('$name', '$email', '$pass')";
-						$conn->exec($sql);
-						$last_id = $conn->lastInsertId();
-						
+						$conn->exec($sql);						
 						startSession($name);
 						header('Location: anaSayfa.php');
 		            	exit;

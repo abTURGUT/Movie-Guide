@@ -6,6 +6,7 @@
 }
 
 p{
+    user-select: none;/*Simdilik*/
     margin:auto;
 }
 
@@ -21,10 +22,10 @@ p{
 .mainCanvas{
             border-radius: 25px;
             width:80%;
-            opacity: 0.75;
+            opacity: 1.0;
             height:1000px;
             border: 6px solid #AAAAAA;
-            background-color: #000000;
+            background-image: linear-gradient(to bottom right, #dae1e7, #E4E7FE);
             margin:30px auto;
         }
 
@@ -32,14 +33,14 @@ p{
         width:80%;
         height:175px;
         border:3px solid #888888;
-        background-color: #333333;
+        background-image: linear-gradient(to bottom right, #142850, #27496d);
         margin:20px auto;
 
 }
 
 .headerTitle{
-
-        color: #63C9FF;
+        user-select: none;
+        color: #C2BD0A;
         text-shadow: 10px 10px #123446;
         font-size: 64px;
         font-family: 'Fjalla One', sans-serif;
@@ -48,27 +49,48 @@ p{
 }
 
 .headerButton{
-        width:150px;
-        height:60px;
+        width: auto ;
+        height:40px;
         display:flex;
         border-radius: 10px;
         border:3px solid #888888;
-        background-color: #333333;
+        padding-right: 8px;
+        padding-left: 8px;
         margin-left: 20px;
-        margin-top: 32px;
+        margin-top: 25px;
         float:left;
-        background-image: linear-gradient( #333333, rgb(39, 60, 71));
+        background-color: rgba(60,1,173,0.10);
         font-size:25px;
-        color:rgb(255, 148, 219);
+        color:rgb(227, 216, 95);
         text-align:center;
+        transition: 0.25s ease;
+        /*-webkit-transition: 0.25s ease;
+        -moz-transition: 0.25s ease;*/
       
+}
+.headerButton:hover{transform: scale(1.25);
+    -webkit-animation-name: yellowPulse;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-box-shadow: 0 0 36px rgb(227, 216, 95);
+
+
+}
+@-webkit-keyframes yellowPulse {
+    from { 
+        -webkit-box-shadow: 0 0 0 #3C1D00; }
+    to { 
+        -webkit-box-shadow: 0 0 36px rgb(227, 216, 95);
+        
+
+         }
 }
 
 .headerLogOut{
     width:60px;
     height:60px;
 
-    display:flex;
+    display:none;
 
     border-radius: 10px;
     border:3px solid #888888;
@@ -91,20 +113,38 @@ p{
 
 }
 .loginButton{
-        width:120px;
-        height:40px;
+        width:100px;
+        height:32px;
         border-radius: 10px;
         border:1px solid #000000;
-        background-color: rgb(82, 78, 78);
+        background-color: rgba(60, 30, 0,0.30);
         margin-right: 10px;
         margin-top: -10px;
         font-size:15px;
-        color:rgb(255, 255, 255);
+        color:rgb(255, 142, 0);
         text-align:center;
         display: flex;
         cursor: pointer;
         float:right;
 }
+
+.loginButton:hover{
+    -webkit-animation-name: orangePulse;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-box-shadow: 0 0 18px rgb(255, 142, 0);
+    background-color: #000000;
+
+}
+@-webkit-keyframes orangePulse {
+    from { 
+        background-color: #3C1D00; 
+        -webkit-box-shadow: 0 0 0 #3C1D00; }
+    to { 
+        background-color: #000000; 
+        -webkit-box-shadow: 0 0 18px rgb(255, 142, 0); }
+}
+
 
 .blocked{
     display: none;
@@ -166,7 +206,10 @@ input#loginName{
     margin-top: 40px;
 }
 
+.loginSubmit:hover{
+    background-color: #8C0E07;
 
+}
 
 .loginSubmit{
         width:100px;
@@ -181,8 +224,13 @@ input#loginName{
         color:rgb(255, 255, 255);
         text-align:center;
         cursor: pointer;
+        -webkit-transition: 0.25s ease;
 }
 
+.signUpSubmit:hover{
+    background-color: #828282;
+
+}
 .signUpSubmit{
         width:100px;
         height:40px;
@@ -196,6 +244,7 @@ input#loginName{
         color:rgb(0, 0, 0);
         text-align:center;
         cursor: pointer;
+        -webkit-transition: 0.25s ease;
 }
 
 div#userLogin{
@@ -239,4 +288,49 @@ div#signUpError{
 
 .invisible{
     display:none;
+}
+
+
+
+
+#homeFilmCanvas{
+    border-radius: 25px;
+    width:50%;
+    max-width: 500px;
+    height: 200px;
+    opacity: 1.00;
+    border: 3px solid #FFFFFF;
+    background-image: linear-gradient(#F02F00, #D9150B);
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    -webkit-box-shadow: 0 8px 9px #550000;
+}
+
+
+
+#homeFilmInformation{
+    width:80%;
+    height: 50px;
+    margin:auto;
+    margin-top: 20px;
+    opacity: 1.00;
+    background-image: linear-gradient(#F02F00, #D9150B);
+    border: 3px solid #FFFFFF;
+}
+
+#homeFilmImage{
+    width:50%;
+    display:flex;
+    height: 200px;
+    background-color: rgba(0,0,0,0);
+    margin:30px auto;
+}
+.img{
+    border-radius: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    margin:auto;
+    border: 3px solid #000000;
+    -webkit-box-shadow: 0 0 9px #9E9EFA;
 }

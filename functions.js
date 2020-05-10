@@ -16,8 +16,6 @@ function loginButton(status){
 	}
 	
 
-	
-
 }
 
 function logOut(){
