@@ -17,7 +17,7 @@
     <style>
     body {
         overflow: visible;
-        background-image: linear-gradient(to bottom right, #610680, #27002B);
+        background-image: linear-gradient(to bottom right, #AEA1B3, #6E5271);
     }
 	</style>
 	
