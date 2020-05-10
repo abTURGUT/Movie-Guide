@@ -26,27 +26,43 @@
     	
 		<form name="signInForm" id="signInForm" method="post" onsubmit = "return signIn();" action="<?php $_SERVER['PHP_SELF'];?>" >
         <div id = 'userLogin'> User Login </div>
+
         <input id = 'loginName' name="loginName" type = 'text' class = 'loginInput' 
-        placeholder="User Name" <?php if (isset($_SESSION['errorUserName'])) {echo " value='" . $_SESSION['errorUserName'] . "' "; $_SESSION['errorUserName']="";}?>>
+        placeholder="User Name" 
+        <?php if (isset($_SESSION['errorUserName'])) {echo " value='" . $_SESSION['errorUserName'] . "' "; $_SESSION['errorUserName']="";}?>>
+
         <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput' 
-		placeholder="Password" <?php if (isset($_SESSION['errorPassword'])) {echo " value='" . $_SESSION['errorPassword'] . "' "; $_SESSION['errorPassword']="";}?>>
-        <div id = 'loginError'> 
-        	<?php if(isset($_SESSION['error']) && $_SESSION['error'] != "") { echo $_SESSION['error']; } ?> 
+		placeholder="Password" 
+		<?php if (isset($_SESSION['errorPassword'])) {echo " value='" . $_SESSION['errorPassword'] . "' "; $_SESSION['errorPassword']="";}?>>
+
+        <div id = 'loginError'> placeholder
+        	<?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != "") { echo $_SESSION['loginError']; } ?> 
         </div>
+
         <input id = 'loginSubmit' name="loginSubmit" type = 'submit' class = 'loginSubmit' value = 'Sign In'  onclick="signIn();">
        
 		</form>
-        <input id = 'signUp' type = 'submit' class = 'signUpSubmit' value = 'Sign Up' onclick="signUpButton();">
+        <input id = 'signUp' type = 'submit' class = 'signUpSubmit' value = 'Sign Up' onclick="signUpButton('clearInput');">
 		
     </div>
     <div id="signUpPanel" class = 'signUpPanel' onclick="">
 		<form name="signUpForm" id="signUpForm" method="post" onsubmit = "return signUp();" action="<?php $_SERVER['PHP_SELF'];?>" >
 		<div id = 'userLogin'> User Sign Up </div>
-        <input id = 'nickName' name = 'nN' type = 'text' class = 'loginInput' placeholder="User Name">
-        <input id = 'email' name = 'eM' type = 'text' class = 'loginInput'placeholder="E-mail">
-        <input id = 'password' name = 'pW' type = 'password' class = 'loginInput'placeholder="Password">
 
-        <div id = 'signUpError'> wrong! </div>
+        <input id = 'nickName' name = 'nN' type = 'text' class = 'loginInput' placeholder="User Name" 
+        <?php if (isset($_SESSION['errorSUserName'])) {echo " value='" . $_SESSION['errorSUserName'] . "' "; $_SESSION['errorSUserName']="";}?>>
+
+        <input id = 'email' name = 'eM' type = 'text' class = 'loginInput'placeholder="E-mail" 
+        <?php if (isset($_SESSION['errorSEmail'])) {echo " value='" . $_SESSION['errorSEmail'] . "' "; $_SESSION['errorSEmail']="";}?>>
+
+        <input id = 'password' name = 'pW' type = 'password' class = 'loginInput'placeholder="Password" 
+        <?php if (isset($_SESSION['errorSPassword'])) {echo " value='" . $_SESSION['errorSPassword'] . "' "; $_SESSION['errorSPassword']="";}?>>
+
+
+        <div id = 'signUpError'>placeholder
+        	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != "") { echo $_SESSION['signUpError']; } ?> 
+        </div>
+
         <input id = 'signUpSubmit' name = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up'>
     </form>
     <input id = 'signIn' name="btn"; type = 'submit' class = 'signUpSubmit' value = 'Sign In' onclick="loginButton('clearInput')">
@@ -54,15 +70,26 @@
 
     <div id = "accountName" class = "invisible"><?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { echo $_SESSION['username']; }else echo '' ?></div>
                   
-	<?php if(isset($_SESSION['error']) && $_SESSION['error'] != null) { 
-		//If 'error' is defined and not empty then open the login panel and show the error
+	<?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != null) { 
+		//If 'loginError' is defined and not empty then open the login panel and show the error
 		echo "<script>loginButton();</script>";
 		echo "<script>document.getElementById('loginError').style.visibility = 'visible';</script>"; 
 		
 		//After writing the error clear it so it won't show when the user reloads
-		echo $_SESSION['error'] = "";
+		echo $_SESSION['loginError'] = "";
 		echo $_SESSION['errorUserName'] = "";
 		echo $_SESSION['errorPassword'] = "";
+	}?> 
+	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != null) { 
+		//If 'loginError' is defined and not empty then open the login panel and show the error
+		echo "<script>signUpButton();</script>";
+		echo "<script>document.getElementById('signUpError').style.visibility = 'visible';</script>"; 
+		
+		//After writing the error clear it so it won't show when the user reloads
+		echo $_SESSION['signUpError'] = "";
+		echo $_SESSION['errorSUserName'] = "";
+		echo $_SESSION['errorSEmail'] = "";
+		echo $_SESSION['errorSPassword'] = "";
 	}?> 
 
 <?php
@@ -83,7 +110,7 @@
 				$result = mysqli_query($connection,$myQuery);
 				
 				if(mysqli_num_rows($result) <= 0){
-					$_SESSION['error'] = 'Wrong User Name!';
+					$_SESSION['loginError'] = 'Wrong User Name!';
 					$_SESSION['errorUserName'] = $name;
 					$_SESSION['errorPassword'] = $pass;
 					header('Location: anaSayfa.php');
@@ -98,7 +125,7 @@
 	            	exit;
 					}
 					else{
-						$_SESSION['error'] = 'Wrong Password!';
+						$_SESSION['loginError'] = 'Wrong Password!';
 						$_SESSION['errorUserName'] = $name;
 						$_SESSION['errorPassword'] = $pass;
 						header('Location: anaSayfa.php');
@@ -127,9 +154,22 @@
 				$result = mysqli_query($connection,$myQuery);
 				$myQuery2 = "SELECT * FROM users WHERE email = '$email'";
 				$result2 = mysqli_query($connection,$myQuery2);
-				if(mysqli_num_rows($result) > 0 || mysqli_num_rows($result2) > 0){
-					echo '<script>alert("DUPLICATE");</script>';
+				if(mysqli_num_rows($result) > 0){
+					$_SESSION['signUpError'] = 'An account with that username already exists!';
+					$_SESSION['errorSUserName'] = $name;
+					$_SESSION['errorSEmail'] = $email;
+					$_SESSION['errorSPassword'] = $pass;
+					header('Location: anaSayfa.php');
 	            	exit;
+				}
+				else if(mysqli_num_rows($result2) > 0){
+					$_SESSION['signUpError'] = 'An account with that email already exists!';
+					$_SESSION['errorSUserName'] = $name;
+					$_SESSION['errorSEmail'] = $email;
+					$_SESSION['errorSPassword'] = $pass;
+					header('Location: anaSayfa.php');
+					exit;
+
 				}
 				else{
 					try {

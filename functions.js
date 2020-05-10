@@ -24,10 +24,17 @@ function logOut(){
 	document.getElementById('loginButton').style.display = 'block';
 }
 
-function signUpButton(){
+function signUpButton(status){
 	document.getElementById("loginPanel").style.display="none";
 	document.getElementById("signUpPanel").style.display="block";
 	document.getElementById("signUpError").style.visibility="hidden"; 
+	document.getElementById('blocked').style.display = 'block';
+
+	if(status=="clearInput"){
+			document.getElementById('nickName').value = "";
+			document.getElementById('email').value = "";
+			document.getElementById('password').value = "";
+	}
 }
 
 function loginExit(){
