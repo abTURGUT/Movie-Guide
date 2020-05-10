@@ -26,15 +26,26 @@
     <div class="mainCanvas">
 
     	<?php 
-    			for($var = 0; $var < 3; $var++){
+    			for($var = 0; $var < 5; $var++){
     			echo '
-    			 <div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
+				 <div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
+					<div id = "homeFilmImage" class = "homeFilmImage" >
+				 		<img class = "img" src="images\darkknight.jpg" alt="Abdullah"  width="auto" height="auto">
+			  		</div>
     			 	<div id = "homeFilmInformation" class = "homeFilmInformation">
-    			
+						<p style="text-align:center" id="featureTitle">NAME</p>
+						<p style="text-align:center" id="featureInfo">name</p>
+
+						<p style="text-align:center" id="featureTitle">YEAR</p>
+						<p style="text-align:center" id="featureInfo">year</p>
+
+						<p style="text-align:center" id="featureTitle">TYPE</p>
+						<p style="text-align:center" id="featureInfo">type</p>
+
+						<p style="text-align:center" id="featureTitle">RATE</p>
+						<p style="text-align:center" id="featureInfo">rate</p>
     			 	</div>
-    				<div id = "homeFilmImage" class = "homeFilmImage" >
-    					<img class = "img" src="images\AbdullahT.jpg" alt="Abdullah"  width="auto" height="auto">
-    			 	</div>
+    				
     			 </div>';
     		 }
     	?>

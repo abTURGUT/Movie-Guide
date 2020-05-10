@@ -23,7 +23,7 @@ p{
             border-radius: 25px;
             width:80%;
             opacity: 1.0;
-            height:1000px;
+            height:auto;
             border: 6px solid #AAAAAA;
             background-image: linear-gradient(to bottom right, #dae1e7, #E4E7FE);
             margin:30px auto;
@@ -295,42 +295,55 @@ div#signUpError{
 
 #homeFilmCanvas{
     border-radius: 25px;
-    width:50%;
-    max-width: 500px;
-    height: 200px;
+    width:70%;
+    max-width: 800px;
+    height: 500px;
     opacity: 1.00;
     border: 3px solid #FFFFFF;
     background-image: linear-gradient(#F02F00, #D9150B);
     margin:auto;
-    margin-top: 50px;
-    margin-bottom: 150px;
+    margin-top: 300px;
+    margin-bottom: 400px;
     -webkit-box-shadow: 0 8px 9px #550000;
 }
 
 
 
 #homeFilmInformation{
-    width:80%;
-    height: 50px;
+    width:300px;
+    height: 240px;
     margin:auto;
-    margin-top: 20px;
+    margin-top: 200px;
     opacity: 1.00;
     background-image: linear-gradient(#F02F00, #D9150B);
     border: 3px solid #FFFFFF;
 }
 
 #homeFilmImage{
-    width:50%;
+    width:711px;
     display:flex;
-    height: 200px;
+    height: 400px;
     background-color: rgba(0,0,0,0);
-    margin:30px auto;
+    margin:-180px auto;
+    
 }
 .img{
     border-radius: 20px;
     max-width: 100%;
     max-height: 100%;
-    margin:auto;
-    border: 3px solid #000000;
+   
+    
+ 
     -webkit-box-shadow: 0 0 9px #9E9EFA;
+}
+
+#featureTitle{  
+        font-size: 18px;
+        margin-bottom:5px;
+}
+
+#featureInfo{
+        font-size: 20px;
+        margin-bottom:10px;
+        color:white;
 }
