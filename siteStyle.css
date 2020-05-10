@@ -288,6 +288,7 @@ div#signUpError{
 
 .invisible{
     display:none;
+
 }
 
 
@@ -298,13 +299,34 @@ div#signUpError{
     width:70%;
     max-width: 800px;
     height: 500px;
-    opacity: 1.00;
-    border: 3px solid #FFFFFF;
-    background-image: linear-gradient(#F02F00, #D9150B);
+    border: 0.1px solid rgba(0,0,0,0.0);
+    background-image: linear-gradient(rgba(93,09,09,0.01), rgba(57,0,0,0.00));
     margin:auto;
     margin-top: 300px;
     margin-bottom: 400px;
-    -webkit-box-shadow: 0 8px 9px #550000;
+    -webkit-transition: 0.25s ease;
+}
+
+#homeFilmCanvas:hover{
+    background-color: #828282;
+    -webkit-animation-name: maroonPulse;
+    -webkit-animation-duration: 0.75s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-box-shadow: 0 0 18px rgb(85, 0, 0);
+    background-image: linear-gradient(rgba(93,09,09,0.80), rgba(57,0,0,0.70));
+    border: 3px solid rgba(0,0,0);
+}
+
+
+
+}
+@-webkit-keyframes maroonPulse {
+    from { 
+        background-image: linear-gradient(rgba(93,09,09,0.01), rgba(57,0,0,0.00));
+        -webkit-box-shadow: 0 0 0 #FFFFFF; }
+    to { 
+        background-image: linear-gradient(rgba(93,09,09,0.80), rgba(57,0,0,0.70));
+        -webkit-box-shadow: 0 0 18px rgb(85, 0, 0); }
 }
 
 
@@ -315,8 +337,11 @@ div#signUpError{
     margin:auto;
     margin-top: 200px;
     opacity: 1.00;
-    background-image: linear-gradient(#F02F00, #D9150B);
-    border: 3px solid #FFFFFF;
+    background-image: linear-gradient(to bottom right,#626262, #343434);
+    border: 3px outset #626262;
+
+    -webkit-box-shadow: 0 5px 18px 3px #000000;
+
 }
 
 #homeFilmImage{
