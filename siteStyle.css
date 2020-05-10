@@ -24,9 +24,10 @@ p{
             width:80%;
             opacity: 1.0;
             height:auto;
-            border: 6px solid #AAAAAA;
-            background-image: linear-gradient(to bottom right, #dae1e7, #E4E7FE);
+            border: 6px solid #FFFFF;
+            background-image: linear-gradient(to bottom right, #e3e2dd, #D7D6D1);
             margin:30px auto;
+            padding-top: 200px;
         }
 
 .header{
@@ -299,16 +300,15 @@ div#signUpError{
     width:70%;
     max-width: 800px;
     height: 500px;
-    border: 0.1px solid rgba(0,0,0,0.0);
+    border: 1px solid rgba(0,0,0,0.0);
     background-image: linear-gradient(rgba(93,09,09,0.01), rgba(57,0,0,0.00));
     margin:auto;
-    margin-top: 300px;
+    margin-top: 100px;
     margin-bottom: 400px;
     -webkit-transition: 0.25s ease;
 }
 
 #homeFilmCanvas:hover{
-    background-color: #828282;
     -webkit-animation-name: maroonPulse;
     -webkit-animation-duration: 0.75s;
     -webkit-animation-iteration-count: 1;
