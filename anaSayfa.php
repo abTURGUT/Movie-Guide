@@ -10,6 +10,7 @@
 
 <body id = 'body'>
 	<?php
+		ob_start();
 		session_start();
 	?>
     
@@ -18,29 +19,24 @@
         overflow: visible;
         background-image: linear-gradient(to bottom right, #610680, #27002B);
     }
-    </style>
-    <?php include 'header.php';?>
-    <div class="mainCanvas">
-    	<div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
-    		<div id = "homeFilmInformation" class = "homeFilmInformation">
-    			<
-    		</div>
-    		<div id = "homeFilmImage" class = "homeFilmImage" >
+	</style>
+	
+	<?php include 'header.php';?>
 
-    		</div>
-    	</div>
+    <div class="mainCanvas">
+
     	<?php 
-    		// for($var = 0; $var < 3; $var++){
-    		// 	echo '
-    			// <div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
-    			// 	<div id = "homeFilmInformation" class = "homeFilmInformation">
+    			for($var = 0; $var < 3; $var++){
+    			echo '
+    			 <div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
+    			 	<div id = "homeFilmInformation" class = "homeFilmInformation">
     			
-    			// 	</div>
-    			// 	<div id = "homeFilmImage" class = "homeFilmImage" >
-    			// 		<img class = "img" src="AbdullahT.jpg" alt="Abdullah"  width="auto" height="auto">
-    			// 	</div>
-    			// </div>';
-    		// }
+    			 	</div>
+    				<div id = "homeFilmImage" class = "homeFilmImage" >
+    					<img class = "img" src="images\AbdullahT.jpg" alt="Abdullah"  width="auto" height="auto">
+    			 	</div>
+    			 </div>';
+    		 }
     	?>
     </div>
     
@@ -248,7 +244,7 @@
 			// else
 			// 	echo '<script>alert("NELLO");</script>';
        
-        
+			ob_end_flush();
         ?>
 
 </body>
