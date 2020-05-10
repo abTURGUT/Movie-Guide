@@ -140,7 +140,7 @@
 						$conn->exec($sql);
 						$last_id = $conn->lastInsertId();
 						
-						session_start();
+						startSession($name);
 						header('Location: anaSayfa.php');
 		            	exit;
 
