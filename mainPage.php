@@ -11,9 +11,17 @@
 <body id = 'body'>
 	<?php
 		ob_start();
-		session_start();
+			if (isset($_COOKIE['signedIn']) && $_COOKIE['signedIn'] == 1) {
+				session_start();
+				$cookie_name = "signedIn";
+        		$cookie_value = 1;
+        		setcookie($cookie_name, $cookie_value, time() + (86400 * 0.5), "/");
+        		$cookie_name = "username";
+        		$cookie_value = $_COOKIE['username'];
+        		setcookie($cookie_name, $cookie_value, time() + (86400 * 0.5), "/");
+    		}
+		
 	?>
-    
     <style>
     body {
         overflow: visible;
@@ -24,31 +32,7 @@
 	<?php include 'header.php';?>
 
     <div class="mainCanvas">
-
-    	<?php 
-    			for($var = 0; $var < 5; $var++){
-    			echo '
-				 <div id = "homeFilmCanvas" class = "homeFilmCanvas"> 
-					<div id = "homeFilmImage" class = "homeFilmImage" >
-				 		<img class = "img" src="images\darkknight.jpg" alt="Abdullah"  width="auto" height="auto">
-			  		</div>
-    			 	<div id = "homeFilmInformation" class = "homeFilmInformation">
-						<p style="text-align:center" id="featureTitle">NAME</p>
-						<p style="text-align:center" id="featureInfo">name</p>
-
-						<p style="text-align:center" id="featureTitle">YEAR</p>
-						<p style="text-align:center" id="featureInfo">year</p>
-
-						<p style="text-align:center" id="featureTitle">TYPE</p>
-						<p style="text-align:center" id="featureInfo">type</p>
-
-						<p style="text-align:center" id="featureTitle">RATE</p>
-						<p style="text-align:center" id="featureInfo">rate</p>
-    			 	</div>
-    				
-    			 </div>';
-    		 }
-    	?>
+    	<?php include 'mainPageFilmShow.php';?>
     </div>
     
 
@@ -56,52 +40,55 @@
     <div id="loginPanel" class = 'loginPanel' onclick="">
     	
 		<form name="signInForm" id="signInForm" method="post" onsubmit = "return signIn();" action="<?php $_SERVER['PHP_SELF'];?>" >
-        <div id = 'userLogin'> User Login </div>
+	        <div id = 'userLogin'> User Login </div>
 
-        <input id = 'loginName' name="loginName" type = 'text' class = 'loginInput' 
-        placeholder="User Name" 
-        <?php if(isset($_SESSION['errorUserName'])) {echo " value='" . $_SESSION['errorUserName'] . "' "; $_SESSION['errorUserName']="";}?>>
+	        <input id = 'loginName' name="loginName" type = 'text' class = 'loginInput'
+	        placeholder="User Name" 
+	        <?php //if(isset($_SESSION['errorUserName'])) {echo " value='" . $_SESSION['errorUserName'] . "' "; $_SESSION['errorUserName']="";}?>>
 
-        <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput' 
-		placeholder="Password" 
-		<?php if(isset($_SESSION['errorPassword'])) {echo " value='" . $_SESSION['errorPassword'] . "' "; $_SESSION['errorPassword']="";}?>>
+	        <input id = 'loginPassword' name="loginPassword" type = 'password' class = 'loginInput' 
+			placeholder="Password" 
+			<?php //if(isset($_SESSION['errorPassword'])) {echo " value='" . $_SESSION['errorPassword'] . "' "; $_SESSION['errorPassword']="";}?>>
 
-        <div id = 'loginError'>
-        <?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != "") { echo $_SESSION['loginError']; } else echo 'placeholder'; ?> 
-        </div>
+	        <div id = 'loginError'>
+	        <?php if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != "") { echo $_SESSION['loginError']; } else echo 'placeholder'; ?> 
+	        </div>
 
-        <input id = 'loginSubmit' name="loginSubmit" type = 'submit' class = 'loginSubmit' value = 'Sign In'  onclick="signIn();">
+	        <input id = 'loginSubmit' name="loginSubmit" type = 'submit' class = 'loginSubmit' value = 'Sign In' onclick="signIn();">
        
 		</form>
         <input id = 'signUp' type = 'submit' class = 'signUpSubmit' value = 'Sign Up' onclick="signUpButton('clearInput');">
 		
     </div>
     <div id="signUpPanel" class = 'signUpPanel' onclick="">
+
 		<form name="signUpForm" id="signUpForm" method="post" onsubmit = "return signUp();" action="<?php $_SERVER['PHP_SELF'];?>" >
-		<div id = 'userLogin'> User Sign Up </div>
+			<div id = 'userLogin'> User Sign Up </div>
 
-        <input id = 'nickName' name = 'nN' type = 'text' class = 'loginInput' placeholder="User Name"
-        <?php if(isset($_SESSION['errorSUserName'])) {echo " value='" . $_SESSION['errorSUserName'] . "' "; $_SESSION['errorSUserName']="";}?>>
+	        <input id = 'nickName' name = 'nN' type = 'text' class = 'loginInput' placeholder="User Name"
+	        <?php //if(isset($_SESSION['errorSUserName'])) {echo " value='" . $_SESSION['errorSUserName'] . "' "; $_SESSION['errorSUserName']="";}?>>
 
-        <input id = 'email' name = 'eM' type = 'text' class = 'loginInput'placeholder="E-mail" 
-        <?php if(isset($_SESSION['errorSEmail'])) {echo " value='" . $_SESSION['errorSEmail'] . "' "; $_SESSION['errorSEmail']="";}?>>
+	        <input id = 'email' name = 'eM' type = 'text' class = 'loginInput'placeholder="E-mail" 
+	        <?php //if(isset($_SESSION['errorSEmail'])) {echo " value='" . $_SESSION['errorSEmail'] . "' "; $_SESSION['errorSEmail']="";}?>>
 
-        <input id = 'password' name = 'pW' type = 'password' class = 'loginInput'placeholder="Password" 
-        <?php if(isset($_SESSION['errorSPassword'])) {echo " value='" . $_SESSION['errorSPassword'] . "' "; $_SESSION['errorSPassword']="";}?>>
+	        <input id = 'password' name = 'pW' type = 'password' class = 'loginInput'placeholder="Password" 
+	        <?php //if(isset($_SESSION['errorSPassword'])) {echo " value='" . $_SESSION['errorSPassword'] . "' "; $_SESSION['errorSPassword']="";}?>>
 
 
-        <div id = 'signUpError'>
-        	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != "") { echo $_SESSION['signUpError']; } else echo 'placeholder'; ?> 
-        </div>
+	        <div id = 'signUpError'>
+	        	<?php if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != "") { echo $_SESSION['signUpError']; } else echo 'placeholder'; ?> 
+	        </div>
 
-        <input id = 'signUpSubmit' name = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up'>
+	        <input id = 'signUpSubmit' name = 'signUpSubmit' type = 'submit' class = 'loginSubmit' value = 'Sign Up' onclick="signUp();">
     </form>
     <input id = 'signIn' name="btn"; type = 'submit' class = 'signUpSubmit' value = 'Sign In' onclick="loginButton('clearInput')">
     </div>
 
-    <div id = "accountName" class = "invisible"><?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { echo $_SESSION['username']; }else echo '' ?></div>
+    <div id = "accountName" class = "invisible"><?php if(isset($_COOKIE['signedIn']) && $_COOKIE['signedIn'] == 1) { echo $_COOKIE['username']; }else echo '' ?></div>
                   
+
 	<?php 
+	/*WE DONT NEED THIS AFTER THE AJAX IMPLEMENTATION
 	if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != null) { 
 		//If 'loginError' is defined and not empty then open the login panel and show the error
 		echo "<script>loginButton();</script>";
@@ -122,11 +109,16 @@
 		echo $_SESSION['errorSUserName'] = "";
 		echo $_SESSION['errorSEmail'] = "";
 		echo $_SESSION['errorSPassword'] = "";
-	}?> 
+		}*/
+	?> 
 
 <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loginSubmit'])){
 
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loginName']) && isset($_POST['loginPassword'])){
+            	$name = $_POST['loginName'];
+				startSession($name);
+
+/* WE DONT NEED THIS AFTER THE AJAX IMPLEMENTATION
             	$servername = "localhost";
           		$username = "pma";
          		$password = "";
@@ -134,9 +126,10 @@
 
          		$connection = mysqli_connect('localhost',$username,$password,$dbname);
 
-         		$name = $_POST['loginName'];
+         		
 				$pass = $_POST['loginPassword'];
 
+				
 				//if there is not the user name
 				$myQuery = "SELECT * FROM users WHERE nickname = '$name'";
 				$result = mysqli_query($connection,$myQuery);
@@ -162,13 +155,14 @@
 						$_SESSION['errorPassword'] = $pass;
 						header('Location: anaSayfa.php');
 					}
-				}
+				}*/
 				
 				
 			}
 			
 
-			if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signUpSubmit'])){
+			if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nN']) && isset($_POST['eM']) && isset($_POST['pW'])){
+
 
             	$servername = "localhost";
           		$username = "pma";
@@ -181,6 +175,23 @@
 				$email = $_POST['eM'];
 				$pass = $_POST['pW'];
 
+
+				try {
+					$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		
+	
+					$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('$name', '$email', '$pass')";
+					$conn->exec($sql);						
+					startSession($name);
+					header('Location: mainPage.php');
+	            	exit;
+
+				} 
+				catch (PDOException $e) {
+					echo $sql . "<br>" . $e->getMessage();
+				}
+
+/* WE DONT NEED THIS AFTER THE AJAX IMPLEMENTATION
 				//Check for duplicate username or email.
 				$myQuery = "SELECT * FROM users WHERE nickname = '$name'";
 				$result = mysqli_query($connection,$myQuery);
@@ -221,39 +232,40 @@
 					$conn = null;
 	          		$conn->exec($sql);
 
-          		}
+          		}*/
 
             }
             //LOG IN HANDLER
             function startSession($name){
-            	//session_start();
+            	session_start();
             	$_SESSION["signedIn"] = true;
                 $_SESSION["username"] = $name;
 
                 //COOKIE
+                $cookie_name = "signedIn";
+        		$cookie_value = 1;
+        		setcookie($cookie_name, $cookie_value, time() + (86400 * 0.5), "/");
+        		$cookie_name = "username";
+        		$cookie_value = $name;
+        		setcookie($cookie_name, $cookie_value, time() + (86400 * 0.5), "/");
 
-                header('Location: anaSayfa.php');
-                /*echo "<script type='text/javascript'>
-                                document.getElementById('logOutButton').style.display = 'block';
-                                document.getElementById('loginButton').style.display = 'none';
-                                </script>";*/
-
+                header('Location: mainPage.php');
             }
 
             
 
             if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['logOutButton']) && 
-            	isset($_SESSION['signedIn']) && $_SESSION['signedIn']) {
+            	isset($_COOKIE['signedIn']) && $_COOKIE['signedIn'] == 1) {
          		$_SESSION['signedIn'] = false;
+         		$cookie_name = "signedIn";
+        		$cookie_value = 0;
+        		setcookie($cookie_name, $cookie_value, time()  -(86400 * 0.5), "/");
+        		$cookie_name = "username";
+        		$cookie_value = "";
+        		setcookie($cookie_name, $cookie_value, time()  -(86400 * 0.5), "/");
          		session_destroy();
-         		header('Location: anaSayfa.php');
+         		header('Location: mainPage.php');
       		}
-
-   //          if(isset($_SESSION["signedIn"]) && $_SESSION["signedIn"]) {
-			//     echo '<script>alert("HELLO");</script>';
-			// }
-			// else
-			// 	echo '<script>alert("NELLO");</script>';
        
 			ob_end_flush();
         ?>

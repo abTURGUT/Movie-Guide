@@ -10,8 +10,8 @@ function loginButton(status){
 		document.getElementById("loginError").style.visibility="hidden"; 
 
 		if(status=="clearInput"){
-			document.getElementById('loginName').value = "";
-			document.getElementById('loginPassword').value = "";
+			document.getElementById("signUpForm").reset();
+			document.getElementById("signInForm").reset();
 		}
 	}
 	
@@ -29,9 +29,8 @@ function signUpButton(status){
 	document.getElementById('blocked').style.display = 'block';
 
 	if(status=="clearInput"){
-			document.getElementById('nickName').value = "";
-			document.getElementById('email').value = "";
-			document.getElementById('password').value = "";
+			document.getElementById("signUpForm").reset();
+			document.getElementById("signInForm").reset();
 	}
 }
 
@@ -45,6 +44,7 @@ function loginExit(){
 function signIn(){
 	var name = document.getElementById('loginName').value;
 	var password = document.getElementById('loginPassword').value;
+	document.getElementById("loginError").style.visibility="hidden"; 
 
 	if(/^[a-zA-Z0-9- ,_]*$/.test(name) == false){
 		document.getElementById("loginError").innerHTML = 'you can not use special characters!'; 
@@ -62,9 +62,29 @@ function signIn(){
 		return false;
 	}
 
-	
-	document.getElementById("loginError").style.visibility="hidden"; 
-	return true;
+	//DATABASE CHECK
+	var dbError = "";
+	var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+    		dbError = this.responseText; 
+    		if(dbError != ""){
+				document.getElementById("loginError").innerHTML = dbError;
+				document.getElementById("loginError").style.visibility="visible";
+				return false;
+   			}
+   			else if(dbError == ""){
+   				document.getElementById("signInForm").submit();
+   				return false;
+   			}
+        }
+    };
+    xhttp.open("POST", "signCheck.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("type=" + "signIn" + "&name=" + name + "&password=" + password);
+   
+
+	return false;
 
 }
 
@@ -72,7 +92,7 @@ function signUp(){
 	var nickname = document.getElementById('nickName').value;
 	var email = document.getElementById('email').value;
 	var password = document.getElementById('password').value;
-
+	document.getElementById("signUpError").style.visibility="hidden"; 
 
 	if(/^[a-zA-Z0-9- ,_]*$/.test(nickname) == false){
 		document.getElementById("signUpError").innerHTML = 'you can not use special characters!'; 
@@ -104,6 +124,29 @@ function signUp(){
 		return false;
 	}
 
-	document.getElementById("signUpError").style.visibility="hidden"; 
-	return true;
+
+
+	//DATABASE CHECK
+	var dbError = "";
+	var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+    		dbError = this.responseText; 
+    		if(dbError != ""){
+				document.getElementById("signUpError").innerHTML = dbError;
+				document.getElementById("signUpError").style.visibility="visible";
+				return false;
+   			}
+   			else if(dbError == ""){
+   				document.getElementById("signUpForm").submit();
+   				return false;
+   			}
+        }
+    };
+    xhttp.open("POST", "signCheck.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("type=" + "signUp" + "&name=" + nickname + "&email=" + email + "&password=" + password);
+
+	
+	return false;
 }

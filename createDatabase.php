@@ -68,10 +68,10 @@
                 fname VARCHAR(50) NOT NULL,
                 ftype VARCHAR(30) NOT NULL,
                 fyear VARCHAR(50) NOT NULL,
-                frate VARCHAR(50) DEFAULT '0',
+                frate INT(50) DEFAULT '0',
                 fratecount INT(50) DEFAULT '0',
                 fcommentcount INT(50) DEFAULT '0',
-                fdirector VARCHAR(50) NOT NULL,
+                factors VARCHAR(50) NOT NULL,
                 fdescription VARCHAR(500) NOT NULL,
                 ftrailer VARCHAR(50) NOT NULL,
                 fimage VARCHAR(50) NOT NULL,
@@ -109,9 +109,24 @@
         // TEMPORARY FOR TESTING
         try {
             $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO films (id,fname,ftype,fyear,fdirector,fdescription,ftrailer,fimage) 
-            VALUES ('theDarkKnight2008', 'The Dark Knight', 'Action','2008','Christopher Nolan','When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.','https://www.youtube.com/watch?v=EXeTwQWrcwY','blabla')";
-            $con->exec($sql);
+            $sql1 = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
+            VALUES ('theDarkKnight2008', 'The Dark Knight', 'Action','2008','Christopher Nolan','When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.','https://www.youtube.com/watch?v=EXeTwQWrcwY','darkknight.jpg')";
+            $sql2 = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
+            VALUES ('theGodfather1972', 'The Godfather', 'Drama','1972','Francis Ford Coppola','The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.','https://www.youtube.com/watch?v=sY1S34973zA','thegodfather.jpg')";
+            $sql3 = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
+            VALUES ('pulpFiction1994', 'Pulp Fiction', 'Drama','1994','Quentin Tarantino','The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.','https://www.youtube.com/watch?v=s7EdQ4FqbhY','pulpfiction.jpg')";
+            $sql4 = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
+            VALUES ('inception2010', 'Inception', 'Science Fiction','2010','Christopher Nolan','A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.','https://www.youtube.com/watch?v=YoHD9XEInc0','inception.jpg')";
+            $sql5 = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
+            VALUES ('theLastSamurai2003', 'The Last Samurai', 'Action','2003','Edward Zwick','An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle.','https://www.youtube.com/watch?v=T50_qHEOahQ','thelastsamurai.jpg')";
+            $sql6 = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
+            VALUES ('theNotebook2004', 'The Notebook', 'Romantic','2004','Nick Cassavetes','A poor yet passionate young man falls in love with a rich young woman, giving her a sense of freedom, but they are soon separated because of their social differences.','https://www.youtube.com/watch?v=FC6biTjEyZw','thenotebook.jpg')";
+            $con->exec($sql1);
+            $con->exec($sql2);
+            $con->exec($sql3);
+            $con->exec($sql4);
+            $con->exec($sql5);
+            $con->exec($sql6);
             $con = null;
         } 
         catch (PDOException $e) {

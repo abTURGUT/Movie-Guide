@@ -32,15 +32,15 @@
       </div>
       <div id = 'loginButton' class = "loginButton" onclick="loginButton('clearInput')">
          <p id="loginButtonText"> 
-            <?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { 
-                     echo $_SESSION['username'];
+            <?php if(isset($_COOKIE['signedIn']) && $_COOKIE['signedIn'] == 1) { 
+                     echo $_COOKIE['username'];
                   } 
                   else echo 'Sign In / Up' ?></p>
       </div>
       <form name="logOutForm" id="logOutForm" method="post" onclick=" logOut()" action="<?php $_SERVER['PHP_SELF'];?>" >
          <input type = "submit" id= "logOutButton" name = "logOutButton" class = "headerLogOut" value="Log Out">
       </form>
-      <?php if(isset($_SESSION['signedIn']) && $_SESSION['signedIn']) { 
+      <?php if(isset($_COOKIE['signedIn']) && $_COOKIE['signedIn'] == 1) { 
                     echo "<script> document.getElementById('logOutButton').style.display = 'flex';</script>";
                   }?>
    </div>
