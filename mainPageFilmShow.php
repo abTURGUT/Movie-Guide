@@ -53,7 +53,7 @@
 			$pageCount = (int)($columnCount/6)+1;
 			if($columnCount%6==0){$pageCount--;}
 			for($i=0;$i<$pageCount;$i++){
-				echo '<a href="http://localhost/webSite/anaSayfa.php?page='.($i+1). '">' . ($i+1) . '</a>';
+				echo '<a href="http://localhost/webSite/mainPage.php?page='.($i+1). '">' . ($i+1) . '</a>';
 			}	
 			
     	?>
