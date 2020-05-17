@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<films>
+    <film>
+        <id>theDarkKnight2008</id>
+        <fname>The Dark Knight</fname>
+        <ftype>Action</ftype>
+        <fyear>2008</fyear>
+        <factors>Christopher Nolan</factors>
+        <fdescription>When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.</fdescription>
+        <ftrailer>https://www.youtube.com/watch?v=EXeTwQWrcwY</ftrailer>
+        <fimage>darkknight.jpg</fimage>
+    </film>
+    <film>
+        <id>theGodfather1972</id>
+        <fname>The Godfather</fname>
+        <ftype>Drama</ftype>
+        <fyear>1972</fyear>
+        <factors>Francis Ford Coppola</factors>
+        <fdescription>The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.</fdescription>
+        <ftrailer>https://www.youtube.com/watch?v=sY1S34973zA</ftrailer>
+        <fimage>thegodfather.jpg</fimage>
+    </film>
+    <film>
+        <id>pulpFiction1994</id>
+        <fname>Pulp Fiction</fname>
+        <ftype>Drama</ftype>
+        <fyear>1994</fyear>
+        <factors>Quentin Tarantino</factors>
+        <fdescription>The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.</fdescription>
+        <ftrailer>https://www.youtube.com/watch?v=s7EdQ4FqbhY</ftrailer>
+        <fimage>pulpfiction.jpg</fimage>
+    </film>
+    <film>
+        <id>inception2010</id>
+        <fname>Inception</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2010</fyear>
+        <factors>Christopher Nolan</factors>
+        <fdescription>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.</fdescription>
+        <ftrailer>https://www.youtube.com/watch?v=YoHD9XEInc0</ftrailer>
+        <fimage>inception.jpg</fimage>
+    </film>
+    <film>
+        <id>theLastSamurai2003</id>
+        <fname>The Last Samurai</fname>
+        <ftype>Action</ftype>
+        <fyear>2003</fyear>
+        <factors>Edward Zwick</factors>
+        <fdescription>An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle.</fdescription>
+        <ftrailer>https://www.youtube.com/watch?v=T50_qHEOahQ</ftrailer>
+        <fimage>thelastsamurai.jpg</fimage>
+    </film>
+    <film>
+        <id>theNotebook2004</id>
+        <fname>The Notebook</fname>
+        <ftype>Romantic</ftype>
+        <fyear>2004</fyear>
+        <factors>Nick Cassavetes</factors>
+        <fdescription>A poor yet passionate young man falls in love with a rich young woman, giving her a sense of freedom, but they are soon separated because of their social differences.</fdescription>
+        <ftrailer>https://www.youtube.com/watch?v=FC6biTjEyZw</ftrailer>
+        <fimage>thenotebook.jpg</fimage>
+    </film>
+</films>

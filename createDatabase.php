@@ -108,6 +108,7 @@
         
         // TEMPORARY FOR TESTING
         try {
+            /*
             $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql1 = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
             VALUES ('theDarkKnight2008', 'The Dark Knight', 'Action','2008','Christopher Nolan','When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.','https://www.youtube.com/watch?v=EXeTwQWrcwY','darkknight.jpg')";
@@ -128,11 +129,31 @@
             $con->exec($sql5);
             $con->exec($sql6);
             $con = null;
+            */
+
+        $a=simplexml_load_file("filmsData.xml");
+        foreach ($a->film as $film) {
+            $id=$film->id;
+            $fname=$film->fname;
+            $ftype=$film->ftype;
+            $fyear=$film->fyear;
+            $factors=$film->factors;
+            $fdescription=$film->fdescription;
+            $ftrailer=$film->ftrailer;
+            $fimage=$film->fimage;
+            
+            $sql = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
+            VALUES ('$id', '$fname', '$ftype','$fyear','$factors','$fdescription','$ftrailer','$fimage')";
+
+            $con->exec($sql);
+            
+        }
+
         } 
         catch (PDOException $e) {
             echo $sql . "<br>" . $e->getMessage();
         }
-        
+        $con = null;
        
 
        
