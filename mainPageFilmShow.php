@@ -44,9 +44,9 @@
 			
 
 						$frate="";
-						if($all[$row]['frate']==0){$frate="Not Rated";}else{$frate=$all[$row]['frate'];}
+						if($all[$row]['frate']==0){$frate="Not Rated";}else{$frate=number_format((float)$all[$row]['frate'], 2, '.', '');}
 						echo '<p style="text-align:center" id="featureTitle">RATE</p>';
-						echo "<p style='text-align:center' class='featureInfo'id='featureInfoRate'>" . number_format($frate, 2, '.', '') . "</p>";
+						echo "<p style='text-align:center' class='featureInfo'id='featureInfoRate'>" . $frate . "</p>";
 
 						echo "<p style='display:none' id= 'hiddenDescription' >" . $all[$row]['fdescription'] . "</p>";
 						echo "<p style='display:none' id= 'hiddenTrailer' >" . $all[$row]['ftrailer'] . "</p>";
