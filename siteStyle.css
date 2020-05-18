@@ -367,8 +367,63 @@ div#signUpError{
         margin-bottom:5px;
 }
 
-#featureInfo{
+.featureInfo{
         font-size: 20px;
         margin-bottom:10px;
         color:white;
+}
+
+
+
+.detailPanel{
+    display:none;
+    width:75%;
+    height:800px;
+    border:6px outset #008BE4;
+    background-image: linear-gradient(to bottom right, #D6FFFF, #A1DEE3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+     -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+#dpName{
+    font-size: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: 'Fjalla One', sans-serif;
+    text-shadow: 0 0 10px #FFAE00,0 0 20px #F6FF00 ;
+    float:left;
+}
+
+#dpTrailer{
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 960px;
+    height: 540px;
+    float: left;
+}
+
+#dpRate{
+    font-size: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    float: right;
+    font-family: 'Fjalla One', sans-serif;
+    text-shadow: 0 0 10px #FFAE00,0 0 20px #F6FF00 ;
+    float:bottom;
+
+}
+
+#dpDescription{
+    font-size: 30px;
+    position: fixed;
+    margin-left: 1024px;
+    margin-top: 200px;
+    float:right;
+    width: 400px;
+    font-family: 'Fjalla One', sans-serif;
+
 }

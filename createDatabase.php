@@ -71,7 +71,7 @@
                 frate INT(50) DEFAULT '0',
                 fratecount INT(50) DEFAULT '0',
                 fcommentcount INT(50) DEFAULT '0',
-                factors VARCHAR(50) NOT NULL,
+                fdirector VARCHAR(50) NOT NULL,
                 fdescription VARCHAR(500) NOT NULL,
                 ftrailer VARCHAR(50) NOT NULL,
                 fimage VARCHAR(50) NOT NULL,
@@ -137,13 +137,13 @@
             $fname=$film->fname;
             $ftype=$film->ftype;
             $fyear=$film->fyear;
-            $factors=$film->factors;
+            $fdirector=$film->fdirector;
             $fdescription=$film->fdescription;
             $ftrailer=$film->ftrailer;
             $fimage=$film->fimage;
             
-            $sql = "INSERT INTO films (id,fname,ftype,fyear,factors,fdescription,ftrailer,fimage) 
-            VALUES ('$id', '$fname', '$ftype','$fyear','$factors','$fdescription','$ftrailer','$fimage')";
+            $sql = "INSERT IGNORE INTO films (id,fname,ftype,fyear,fdirector,fdescription,ftrailer,fimage) 
+            VALUES ('$id', '$fname', '$ftype','$fyear','$fdirector','$fdescription','$ftrailer','$fimage')";
 
             $con->exec($sql);
             

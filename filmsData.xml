@@ -6,9 +6,9 @@
         <fname>The Dark Knight</fname>
         <ftype>Action</ftype>
         <fyear>2008</fyear>
-        <factors>Christopher Nolan</factors>
+        <fdirector>Christopher Nolan</fdirector>
         <fdescription>When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.</fdescription>
-        <ftrailer>https://www.youtube.com/watch?v=EXeTwQWrcwY</ftrailer>
+        <ftrailer>https://www.youtube.com/embed/EXeTwQWrcwY</ftrailer>
         <fimage>darkknight.jpg</fimage>
     </film>
     <film>
@@ -16,9 +16,9 @@
         <fname>The Godfather</fname>
         <ftype>Drama</ftype>
         <fyear>1972</fyear>
-        <factors>Francis Ford Coppola</factors>
+        <fdirector>Francis Ford Coppola</fdirector>
         <fdescription>The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.</fdescription>
-        <ftrailer>https://www.youtube.com/watch?v=sY1S34973zA</ftrailer>
+        <ftrailer>https://www.youtube.com/embed/sY1S34973zA</ftrailer>
         <fimage>thegodfather.jpg</fimage>
     </film>
     <film>
@@ -26,9 +26,9 @@
         <fname>Pulp Fiction</fname>
         <ftype>Drama</ftype>
         <fyear>1994</fyear>
-        <factors>Quentin Tarantino</factors>
+        <fdirector>Quentin Tarantino</fdirector>
         <fdescription>The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.</fdescription>
-        <ftrailer>https://www.youtube.com/watch?v=s7EdQ4FqbhY</ftrailer>
+        <ftrailer>https://www.youtube.com/embed/s7EdQ4FqbhY</ftrailer>
         <fimage>pulpfiction.jpg</fimage>
     </film>
     <film>
@@ -36,9 +36,9 @@
         <fname>Inception</fname>
         <ftype>Science Fiction</ftype>
         <fyear>2010</fyear>
-        <factors>Christopher Nolan</factors>
+        <fdirector>Christopher Nolan</fdirector>
         <fdescription>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.</fdescription>
-        <ftrailer>https://www.youtube.com/watch?v=YoHD9XEInc0</ftrailer>
+        <ftrailer>https://www.youtube.com/embed/YoHD9XEInc0</ftrailer>
         <fimage>inception.jpg</fimage>
     </film>
     <film>
@@ -46,19 +46,139 @@
         <fname>The Last Samurai</fname>
         <ftype>Action</ftype>
         <fyear>2003</fyear>
-        <factors>Edward Zwick</factors>
+        <fdirector>Edward Zwick</fdirector>
         <fdescription>An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle.</fdescription>
-        <ftrailer>https://www.youtube.com/watch?v=T50_qHEOahQ</ftrailer>
+        <ftrailer>https://www.youtube.com/embed/T50_qHEOahQ</ftrailer>
         <fimage>thelastsamurai.jpg</fimage>
     </film>
     <film>
         <id>theNotebook2004</id>
         <fname>The Notebook</fname>
-        <ftype>Romantic</ftype>
+        <ftype>Romance</ftype>
         <fyear>2004</fyear>
-        <factors>Nick Cassavetes</factors>
+        <fdirector>Nick Cassavetes</fdirector>
         <fdescription>A poor yet passionate young man falls in love with a rich young woman, giving her a sense of freedom, but they are soon separated because of their social differences.</fdescription>
-        <ftrailer>https://www.youtube.com/watch?v=FC6biTjEyZw</ftrailer>
+        <ftrailer>https://www.youtube.com/embed/FC6biTjEyZw</ftrailer>
         <fimage>thenotebook.jpg</fimage>
+    </film>
+    <film>
+        <id>jojoRabbit2019</id>
+        <fname>Jojo Rabbit</fname>
+        <ftype>Drama</ftype>
+        <fyear>2019</fyear>
+        <fdirector>Taika Waititi</fdirector>
+        <fdescription>A young boy in Hitlers army finds out his mother is hiding a Jewish girl in their home.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/tL4McUzXfFI</ftrailer>
+        <fimage>jojorabbit.jpg</fimage>
+    </film>
+    <film>
+        <id>johnWick2014</id>
+        <fname>John Wick</fname>
+        <ftype>Action</ftype>
+        <fyear>2014</fyear>
+        <fdirector>Chad Stahelski</fdirector>
+        <fdescription>An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/2AUmvWm5ZDQ</ftrailer>
+        <fimage>johnwick.jpg</fimage>
+    </film>
+    <film>
+        <id>joker2019</id>
+        <fname>Joker</fname>
+        <ftype>Drama</ftype>
+        <fyear>2019</fyear>
+        <fdirector>Tod Phillips</fdirector>
+        <fdescription>In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/zAGVQLHvwOY</ftrailer>
+        <fimage>joker.jpg</fimage>
+    </film>
+    <film>
+        <id>theConjuring2019</id>
+        <fname>The Conjuring</fname>
+        <ftype>Horror</ftype>
+        <fyear>2013</fyear>
+        <fdirector>James Wan</fdirector>
+        <fdescription>Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/k10ETZ41q5o</ftrailer>
+        <fimage>theconjuring.jpg</fimage>
+    </film>
+    <film>
+        <id>theConjuring2019</id>
+        <fname>The Conjuring</fname>
+        <ftype>Horror</ftype>
+        <fyear>2013</fyear>
+        <fdirector>James Wan</fdirector>
+        <fdescription>Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/k10ETZ41q5o</ftrailer>
+        <fimage>theconjuring.jpg</fimage>
+    </film>
+    <film>
+        <id>it2017</id>
+        <fname>It</fname>
+        <ftype>Horror</ftype>
+        <fyear>2017</fyear>
+        <fdirector>Andy Mushietti</fdirector>
+        <fdescription>In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/hAUTdjf9rko</ftrailer>
+        <fimage>it.jpg</fimage>
+    </film>
+    <film>
+        <id>itChapterTwo2019</id>
+        <fname>It Chapter Two</fname>
+        <ftype>Horror</ftype>
+        <fyear>2019</fyear>
+        <fdirector>Andy Mushietti</fdirector>
+        <fdescription>Twenty-seven years after their first encounter with the terrifying Pennywise, the Losers Club have grown up and moved away, until a devastating phone call brings them back.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/xhJ5P7Up3jA</ftrailer>
+        <fimage>itchaptertwo.jpg</fimage>
+    </film>
+    <film>
+        <id>theFaultInOurStars2014</id>
+        <fname>The Fault in our Stars</fname>
+        <ftype>Romance</ftype>
+        <fyear>2014</fyear>
+        <fdirector>Josh Boone</fdirector>
+        <fdescription>Two teenage cancer patients begin a life-affirming journey to visit a reclusive author in Amsterdam.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/9ItBvH5J6ss</ftrailer>
+        <fimage>thefaultinourstars.jpg</fimage>
+    </film>
+    <film>
+        <id>aboutTime2013</id>
+        <fname>About Time</fname>
+        <ftype>Romance</ftype>
+        <fyear>2013</fyear>
+        <fdirector>Richard Curtis</fdirector>
+        <fdescription>At the age of 21, Tim discovers he can travel in time and change what happens and has happened in his own life. His decision to make his world a better place by getting a girlfriend turns out not to be as easy as you might think.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/T7A810duHvw</ftrailer>
+        <fimage>abouttime.jpg</fimage>
+    </film>
+    <film>
+        <id>split2016</id>
+        <fname>Split</fname>
+        <ftype>Horror</ftype>
+        <fyear>2016</fyear>
+        <fdirector>M. Night Shyamalan</fdirector>
+        <fdescription>Three girls are kidnapped by a man with a diagnosed 23 distinct personalities. They must try to escape before the apparent emergence of a frightful new 24th.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/84TouqfIsiI</ftrailer>
+        <fimage>split.jpg</fimage>
+    </film>
+    <film>
+        <id>predestination2014</id>
+        <fname>Predestination</fname>
+        <ftype>Action</ftype>
+        <fyear>2014</fyear>
+        <fdirector>Michael Spierig, Peter Spierig</fdirector>
+        <fdescription>For his final assignment, a top temporal agent must pursue the one criminal that has eluded him throughout time. The chase turns into a unique, surprising and mind-bending exploration of love, fate, identity and time travel taboos.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/-FcK_UiVV40</ftrailer>
+        <fimage>predestination.jpg</fimage>
+    </film>
+    <film>
+        <id>thePrestige2016</id>
+        <fname>The Prestige</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2006</fyear>
+        <fdirector>Christopher Nolan</fdirector>
+        <fdescription>After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/ijXruSzfGEc</ftrailer>
+        <fimage>theprestige.jpg</fimage>
     </film>
 </films>

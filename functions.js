@@ -39,6 +39,9 @@ function loginExit(){
 	document.getElementById('loginPanel').style.display = 'none';
 	document.getElementById("signUpPanel").style.display="none"; 
 	document.getElementById('body').style.overflow = 'visible';
+
+	document.getElementById('detailPanel').style.display = 'none';
+	document.getElementById('dpTrailer').src = "";
 }
 
 function signIn(){
@@ -149,4 +152,24 @@ function signUp(){
 
 	
 	return false;
+}
+
+function detailPanelIn(film){
+	document.getElementById('blocked').style.display = 'block';
+	document.getElementById('body').style.overflow = 'hidden';
+
+	document.getElementById('detailPanel').style.display = 'block';
+	document.getElementById('dpName').innerHTML = film.querySelector("p[id='featureInfoName']").innerHTML + 
+												" (" + film.querySelector("p[id='featureInfoYear']").innerHTML    +") ";
+
+	document.getElementById('dpRate').innerHTML = film.querySelector("p[id='featureInfoRate']").innerHTML;
+
+	document.getElementById('dpDescription').innerHTML = 
+	"Director: <br> &emsp;" + film.querySelector("p[id='hiddenDirector']").innerHTML + "<br>" +
+	"Type: <br> &emsp;" + film.querySelector("p[id='featureInfoType']").innerHTML + "<br>" + 
+	"Description: <br> &emsp;" + film.querySelector("p[id='hiddenDescription']").innerHTML;
+
+	document.getElementById('dpTrailer').src = film.querySelector("p[id='hiddenTrailer']").innerHTML;
+
+
 }

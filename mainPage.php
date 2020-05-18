@@ -34,9 +34,14 @@
     <div class="mainCanvas">
     	<?php include 'mainPageFilmShow.php';?>
     </div>
-    
+    <div id="blocked" class = 'blocked'  onclick="loginExit();"></div> 
 
-    <div id="blocked" class = 'blocked'  onclick="loginExit();"></div>
+    <div class="detailPanel" id="detailPanel">
+    	<p id = "dpName"></p> <p id= "dpRate"></p>
+    	<p id = "dpDescription"> </p>
+    	<iframe id= "dpTrailer" src=""frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    	
+    </div>
     <div id="loginPanel" class = 'loginPanel' onclick="">
     	
 		<form name="signInForm" id="signInForm" method="post" onsubmit = "return signIn();" action="<?php $_SERVER['PHP_SELF'];?>" >
