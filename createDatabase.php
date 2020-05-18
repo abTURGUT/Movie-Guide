@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ABDULLAH TURĞUT , 30118062 -->
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -68,14 +68,14 @@
                 fname VARCHAR(50) NOT NULL,
                 ftype VARCHAR(30) NOT NULL,
                 fyear VARCHAR(50) NOT NULL,
-                frate INT(50) DEFAULT '0',
+                frate FLOAT(50) DEFAULT '0',
                 fratecount INT(50) DEFAULT '0',
                 fcommentcount INT(50) DEFAULT '0',
                 fdirector VARCHAR(50) NOT NULL,
                 fdescription VARCHAR(500) NOT NULL,
                 ftrailer VARCHAR(50) NOT NULL,
                 fimage VARCHAR(50) NOT NULL,
-                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
 
         $con->exec($filmsSql);
 
@@ -87,7 +87,7 @@
                 id VARCHAR(50) PRIMARY KEY,
                 cowner VARCHAR(50) NOT NULL,
                 comment VARCHAR(200) NOT NULL,     
-                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
 
         $con->exec($commentsSql);
 
@@ -100,7 +100,7 @@
                 nickname VARCHAR(200) NOT NULL,        
                 email VARCHAR(200) NOT NULL,     
                 userpassword VARCHAR(200) NOT NULL,     
-                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)";
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
 
         $con->exec($userSql);
 

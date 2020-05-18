@@ -22,11 +22,13 @@
 				$columnStart = 0;
 				$columnEnd = 6;
 			}
+
 			
 			
 			if($columnEnd>sizeof($all)){$columnEnd=sizeof($all);}
         	for($row=$columnStart; $row<$columnEnd; $row++){
             	echo '<div id = "homeFilmCanvas" class = "homeFilmCanvas" onclick="detailPanelIn(this);"> ';
+            		echo "<p style='display:none' id= 'panelId' >" . $row . "</p>";
 					echo '<div id = "homeFilmImage" class = "homeFilmImage" >';
 						echo "<img class = 'img' src='images\\" . $all[$row]['fimage'] . "'" . "alt='hata'  width='auto' height='auto'>";
 					echo '</div>';
@@ -49,6 +51,7 @@
 						echo "<p style='display:none' id= 'hiddenDescription' >" . $all[$row]['fdescription'] . "</p>";
 						echo "<p style='display:none' id= 'hiddenTrailer' >" . $all[$row]['ftrailer'] . "</p>";
 						echo "<p style='display:none' id= 'hiddenDirector' >" . $all[$row]['fdirector'] . "</p>";
+						echo "<p style='display:none' id= 'hiddenId' >" . $all[$row]['id'] . "</p>";
 					echo '</div>';
 				echo '</div>';
 			}

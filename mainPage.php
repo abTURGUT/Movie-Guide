@@ -2,6 +2,7 @@
 
 <html>
     <head>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="siteStyle.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width = device-width, initial-scale =1.">
@@ -37,10 +38,20 @@
     <div id="blocked" class = 'blocked'  onclick="loginExit();"></div> 
 
     <div class="detailPanel" id="detailPanel">
-    	<p id = "dpName"></p> <p id= "dpRate"></p>
+    	<p id = "dpName"></p> 
+    	<div class = "dpRatePanel">
+	    	<p id= "dpRate"></p>
+			<span id="star1" class="fa fa-star checked" onmouseover="rateOver(1);" onclick="rateClicked(1);"></span>
+			<span id="star2" class="fa fa-star" onmouseover="rateOver(2);" onclick="rateClicked(2);"></span>
+			<span id="star3" class="fa fa-star" onmouseover="rateOver(3);" onclick="rateClicked(3);"></span>
+			<span id="star4" class="fa fa-star" onmouseover="rateOver(4);" onclick="rateClicked(4);"></span>
+			<span id="star5" class="fa fa-star" onmouseover="rateOver(5);" onclick="rateClicked(5);"></span>
+		</div>
     	<p id = "dpDescription"> </p>
     	<iframe id= "dpTrailer" src=""frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     	
+
+    	<p id = "dpFilmId" class = "invisible"></p>
     </div>
     <div id="loginPanel" class = 'loginPanel' onclick="">
     	

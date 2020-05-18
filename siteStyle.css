@@ -380,7 +380,7 @@ div#signUpError{
     width:75%;
     height:800px;
     border:6px outset #008BE4;
-    background-image: linear-gradient(to bottom right, #D6FFFF, #A1DEE3);
+    background-image: linear-gradient(to bottom right, #D6FFFF, #A1BDE3);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -407,13 +407,8 @@ div#signUpError{
 }
 
 #dpRate{
-    font-size: 50px;
-    margin-right: 50px;
-    margin-top: 50px;
-    float: right;
-    font-family: 'Fjalla One', sans-serif;
-    text-shadow: 0 0 10px #FFAE00,0 0 20px #F6FF00 ;
-    float:bottom;
+    text-align: center
+    
 
 }
 
@@ -426,4 +421,17 @@ div#signUpError{
     width: 400px;
     font-family: 'Fjalla One', sans-serif;
 
+}
+
+.checked {
+  color: orange;
+}
+
+.dpRatePanel{
+    font-size: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    font-family: 'Fjalla One', sans-serif;
+    text-shadow: 0 0 10px #FFAE00,0 0 20px #F6FF00 ;
+    float:right;
 }
