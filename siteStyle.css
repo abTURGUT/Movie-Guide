@@ -59,7 +59,7 @@ a.headerBtn:visited{
 }
 
 .headerButton{
-        width: auto ;
+        width: auto;
         height:40px;
         display:flex;
         border-radius: 10px;
@@ -74,25 +74,25 @@ a.headerBtn:visited{
         color:rgb(227, 216, 95);
         text-align:center;
         transition: 0.25s ease;
-        /*-webkit-transition: 0.25s ease;
-        -moz-transition: 0.25s ease;*/
+        -webkit-transition: 0.25s ease;
+        -moz-transition: 0.25s ease;
       
 }
-.headerButton:hover{transform: scale(1.25);
-    -webkit-animation-name: yellowPulse;
+.headerButton:hover{
+    
+    -webkit-animation-name: yellowHPulse;
     -webkit-animation-duration: 0.1s;
     -webkit-animation-iteration-count: 1;
     -webkit-box-shadow: 0 0 36px rgb(227, 216, 95);
+    transform: scale(1.25);
 
 
 }
-@-webkit-keyframes yellowPulse {
+@-webkit-keyframes yellowHPulse {
     from { 
         -webkit-box-shadow: 0 0 0 #3C1D00; }
     to { 
         -webkit-box-shadow: 0 0 36px rgb(227, 216, 95);
-        
-
          }
 }
 
