@@ -1,4 +1,6 @@
 <?php 
+			
+
 			$dbName = "attb_db";
 			$servername = "localhost";
 			$username = "pma";
@@ -6,24 +8,53 @@
 		  
 			$con = new PDO("mysql:host=$servername;dbname=$dbName",$username,$password);
 			$con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$stmt = $con->prepare("SELECT * FROM films ORDER BY reg_date DESC");
+
+			
+
+			//categorization
+			////////////////////////////////////////////////////////////////////////////////////////
+			$query="";
+			$cg="";
+
+			if(isset($_GET['category'])){
+				if($_GET['category']=="mainPage"){
+					$query = "SELECT * FROM films ORDER BY reg_date DESC";
+				}
+				else if($_GET['category']=="top5"){
+					$cg = $_GET['category'];
+					$query = "SELECT * FROM films ORDER BY frate DESC LIMIT 5";
+				}
+				else{
+					$cg = $_GET['category'];
+					$query = "SELECT * FROM films WHERE ftype='$cg' ORDER BY reg_date DESC";
+				}
+				
+			}
+			else{
+				$query = "SELECT * FROM films ORDER BY reg_date DESC";
+			}
+			////////////////////////////////////////////////////////////////////////////////////////
+
+			$stmt = $con->prepare($query);
 			$stmt->execute();
 			$stmt->setFetchMode(PDO::FETCH_ASSOC); // kolon ado ile çağırma
 			$all = $stmt->fetchAll();
 			
+			//page
+			////////////////////////////////////////////////////////////////////////////////////////
 			$columnStart;
 			$columnEnd;
+			$page;
 			if(isset($_GET['page'])){
-				$q = $_GET['page'];
-				$columnStart = $q*6-6;
-				$columnEnd = $q*6;
+				$page = $_GET['page'];
+				$columnStart = $page*6-6;
+				$columnEnd = $page*6;
 			}
 			else{
 				$columnStart = 0;
 				$columnEnd = 6;
 			}
-
-			
+			////////////////////////////////////////////////////////////////////////////////////////
 			
 			if($columnEnd>sizeof($all)){$columnEnd=sizeof($all);}
         	for($row=$columnStart; $row<$columnEnd; $row++){
@@ -56,12 +87,21 @@
 				echo '</div>';
 			}
 			
-
+			if(!isset($_GET['page'])){$page=1;}
 			$columnCount = sizeof($all);
 			$pageCount = (int)($columnCount/6)+1;
 			if($columnCount%6==0){$pageCount--;}
-			for($i=0;$i<$pageCount;$i++){
-				echo '<a href="http://localhost/webSite/mainPage.php?page='.($i+1). '">' . ($i+1) . '</a>';
-			}	
+			if($pageCount>1){
+				echo '<div class="pagePanel">';
+				for($i=1;$i<=$pageCount;$i++){
+					//$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+					$textSize; $textColor;
+					if($page!=$i){$textSize="30px"; $textColor="black"; }else{$textSize="35px"; $textColor="blue";}
+					echo '<a href="mainPage.php?page='.($i). '" class="pageNo" style="' .'font-size:'. $textSize  .'; color:'. $textColor . ';">' . ($i) . '</a>';
+					if($i!=$pageCount){echo '<a class="pageNoLine">-</a>';}
+				}	
+				echo '</div>';
+			}
+			
 			
     	?>

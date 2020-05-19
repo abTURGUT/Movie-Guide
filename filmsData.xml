@@ -134,18 +134,6 @@
         <fimage>it.jpg</fimage>
     </film>
     <film>
-        <id>itChapterTwo2019</id>
-        <fname>It Chapter Two</fname>
-        <ftype>Horror</ftype>
-        <fyear>2019</fyear>
-        <frate>3.2</frate>
-        <fratecount>9</fratecount>
-        <fdirector>Andy Mushietti</fdirector>
-        <fdescription>Twenty-seven years after their first encounter with the terrifying Pennywise, the Losers Club have grown up and moved away, until a devastating phone call brings them back.</fdescription>
-        <ftrailer>https://www.youtube.com/embed/xhJ5P7Up3jA</ftrailer>
-        <fimage>itchaptertwo.jpg</fimage>
-    </film>
-    <film>
         <id>theFaultInOurStars2014</id>
         <fname>The Fault in our Stars</fname>
         <ftype>Romance</ftype>
@@ -360,5 +348,17 @@
         <fdescription>Supernatural exorcist and demonologist John Constantine helps a policewoman prove her sisters death was not a suicide, but something more.</fdescription>
         <ftrailer>https://www.youtube.com/embed/DEa508Xmmio</ftrailer>
         <fimage>constantine.jpg</fimage>
+    </film>
+    <film>
+        <id>annihilation2018</id>
+        <fname>Annihilation</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2018</fyear>
+        <frate>3.8</frate>
+        <fratecount>14</fratecount>
+        <fdirector>Alex Garland</fdirector>
+        <fdescription>A biologist signs up for a dangerous, secret expedition into a mysterious zone where the laws of nature dont apply.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/89OP78l9oF0</ftrailer>
+        <fimage>annihilation.jpg</fimage>
     </film>
 </films>

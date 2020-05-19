@@ -1,5 +1,3 @@
-
-
 function loginButton(status){
 	if(document.getElementById('loginButtonText').innerHTML.trim() != document.getElementById('accountName').innerHTML.trim()){
 
@@ -17,11 +15,9 @@ function loginButton(status){
 	
 
 }
-
 function logOut(){
 	document.getElementById('loginButton').style.display = 'block';
 }
-
 function signUpButton(status){
 	document.getElementById("loginPanel").style.display="none";
 	document.getElementById("signUpPanel").style.display="block";
@@ -33,7 +29,6 @@ function signUpButton(status){
 			document.getElementById("signInForm").reset();
 	}
 }
-
 function loginExit(){
 	document.getElementById('blocked').style.display = 'none';
 	document.getElementById('loginPanel').style.display = 'none';
@@ -43,7 +38,6 @@ function loginExit(){
 	document.getElementById('detailPanel').style.display = 'none';
 	document.getElementById('dpTrailer').src = "";
 }
-
 function signIn(){
 	var name = document.getElementById('loginName').value;
 	var password = document.getElementById('loginPassword').value;
@@ -90,7 +84,6 @@ function signIn(){
 	return false;
 
 }
-
 function signUp(){
 	var nickname = document.getElementById('nickName').value;
 	var email = document.getElementById('email').value;
@@ -153,7 +146,6 @@ function signUp(){
 	
 	return false;
 }
-
 function detailPanelIn(film){
 	document.getElementById('blocked').style.display = 'block';
 	document.getElementById('body').style.overflow = 'hidden';
@@ -186,7 +178,6 @@ function detailPanelIn(film){
 
 
 }
-
 function rateOver(star){
 	for(let i = 1; i <= 5; i++){
 		var starId = "star" + i;
@@ -197,7 +188,6 @@ function rateOver(star){
 		document.getElementById(starId).className = "fa fa-star checked";
 	}
 }
-
 function rateClicked(star){
 	var userId = document.getElementById("accountName").innerHTML;
 	var filmId = document.getElementById("dpFilmId").innerHTML;
@@ -232,6 +222,6 @@ function rateClicked(star){
 	    xhttp.send("filmId=" + filmId + "&userId=" + userId + "&rate=" + star);
 	}
 	else{
-		alert("no");
+		alert("ONLY USERS CAN VOTE");
 	}
 }

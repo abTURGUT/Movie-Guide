@@ -53,6 +53,7 @@
 
     	<p id = "dpFilmId" class = "invisible"></p>
     </div>
+
     <div id="loginPanel" class = 'loginPanel' onclick="">
     	
 		<form name="signInForm" id="signInForm" method="post" onsubmit = "return signIn();" action="<?php $_SERVER['PHP_SELF'];?>" >
@@ -79,7 +80,7 @@
     <div id="signUpPanel" class = 'signUpPanel' onclick="">
 
 		<form name="signUpForm" id="signUpForm" method="post" onsubmit = "return signUp();" action="<?php $_SERVER['PHP_SELF'];?>" >
-			<div id = 'userLogin'> User Sign Up </div>
+			<div id = 'userSignUp'> User Sign Up </div>
 
 	        <input id = 'nickName' name = 'nN' type = 'text' class = 'loginInput' placeholder="User Name"
 	        <?php //if(isset($_SESSION['errorSUserName'])) {echo " value='" . $_SESSION['errorSUserName'] . "' "; $_SESSION['errorSUserName']="";}?>>
