@@ -173,6 +173,17 @@ function detailPanelIn(film){
 
 	document.getElementById('dpFilmId').innerHTML = film.querySelector("p[id='hiddenId']").innerHTML;
 
+	var limit = Math.floor(parseFloat(document.getElementById('dpRate').innerHTML));
+	
+	for(let i = 1; i <= 5; i++){
+		var starId = "star" + i;
+		document.getElementById(starId).className = "fa fa-star";
+	}
+	for(let i = 1; i <= limit; i++){
+		var starId = "star" + i;
+		document.getElementById(starId).className = "fa fa-star checked";
+	}
+
 
 }
 
@@ -188,30 +199,39 @@ function rateOver(star){
 }
 
 function rateClicked(star){
-	//if(KULLANICI MI DEGIL MI )
-	var filmId = document.getElementById("dpFilmId").innerHTML;
 	var userId = document.getElementById("accountName").innerHTML;
-	//DATABASE CHECK
-	var dbError = "";
-	var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-    		var dbRate = parseFloat(this.responseText).toFixed(2).replace(/[.,]00$/, "");    		
-			document.getElementById("dpRate").innerHTML = dbRate;
-			var x = document.querySelectorAll("div.homeFilmCanvas");
-			let i = -1;
-			let run = true;
-			while(run){
-				i++;
-				if(filmId == x[i].querySelector("p[id='hiddenId']").innerHTML){
-					run = false;
+	var filmId = document.getElementById("dpFilmId").innerHTML;
+	if( userId != ""){
+		//DATABASE CHECK
+		var dbError = "";
+		var xhttp = new XMLHttpRequest();
+	    xhttp.onreadystatechange = function () {
+	    if (this.readyState == 4 && this.status == 200 ) {
+	    	if(this.responseText != 404){
+	    		var dbRate = parseFloat(this.responseText).toFixed(2).replace(/[.,]00$/, "");    		
+				document.getElementById("dpRate").innerHTML = dbRate;
+				var x = document.querySelectorAll("div.homeFilmCanvas");
+				let i = -1;
+				let run = true;
+				while(run){
+					i++;
+					if(filmId == x[i].querySelector("p[id='hiddenId']").innerHTML){
+						run = false;
+					}
+					if( x[i].querySelector("p[id='hiddenId']").innerHTML == null) run = false;
 				}
-				if( x[i].querySelector("p[id='hiddenId']").innerHTML == null) run = false;
+				x[i].querySelector("p[id='featureInfoRate']").innerHTML = dbRate;
 			}
-			x[i].querySelector("p[id='featureInfoRate']").innerHTML = dbRate;
+			else{
+				alert("ALREADY SUBMITTED");
+			}
         }
-    };
-    xhttp.open("POST", "rateCommit.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("filmId=" + filmId + "&userId=" + userId + "&rate=" + star);
+	    };
+	    xhttp.open("POST", "rateCommit.php", true);
+	    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	    xhttp.send("filmId=" + filmId + "&userId=" + userId + "&rate=" + star);
+	}
+	else{
+		alert("no");
+	}
 }

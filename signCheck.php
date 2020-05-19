@@ -49,6 +49,6 @@ else{
 		$error = 'Email already exists!!';
 	}
 }
-
+mysqli_close($connection); 
 echo $error === "" ? "" : $error;
 ?>
