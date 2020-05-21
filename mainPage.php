@@ -138,7 +138,9 @@
 					$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('$name', '$email', '$pass')";
 					$conn->exec($sql);						
 					startSession($name);
-					header('Location: mainPage.php');
+					$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                	header('Location:' . $url );
+					//header('Location: mainPage.php' );
 	            	exit;
 
 				} 
@@ -159,8 +161,9 @@
         		$cookie_name = "username";
         		$cookie_value = $name;
         		setcookie($cookie_name, $cookie_value, time() + (86400 * 0.5), "/");
-
-                header('Location: mainPage.php');
+        		$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                header('Location:' . $url );
+                exit;
             }
 
             
@@ -175,7 +178,9 @@
         		$cookie_value = "";
         		setcookie($cookie_name, $cookie_value, time()  -(86400 * 0.5), "/");
          		session_destroy();
-         		header('Location: mainPage.php');
+         		$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                header('Location:' . $url );
+                exit;
       		}
        
 			ob_end_flush();
