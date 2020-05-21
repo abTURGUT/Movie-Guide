@@ -225,3 +225,12 @@ function rateClicked(star){
 		alert("ONLY USERS CAN VOTE");
 	}
 }
+
+function timer(){
+	var today = new Date();
+    var hour = today.getHours();
+    var minute = today.getMinutes();
+    var second = today.getSeconds();
+    document.getElementById("timeText").innerHTML =  hour + ":" + minute + ":" + second;
+    var timeRenew = setTimeout(timer, 500);
+}

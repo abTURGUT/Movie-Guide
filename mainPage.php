@@ -100,33 +100,11 @@
     </form>
     <input id = 'signIn' name="btn"; type = 'submit' class = 'signUpSubmit' value = 'Sign In' onclick="loginButton('clearInput')">
     </div>
-
+    <?php include 'footer.php';?>
     <div id = "accountName" class = "invisible"><?php if(isset($_COOKIE['signedIn']) && $_COOKIE['signedIn'] == 1) { echo $_COOKIE['username']; }else echo '' ?></div>
                   
 
 	<?php 
-	/*WE DONT NEED THIS AFTER THE AJAX IMPLEMENTATION
-	if(isset($_SESSION['loginError']) && $_SESSION['loginError'] != null) { 
-		//If 'loginError' is defined and not empty then open the login panel and show the error
-		echo "<script>loginButton();</script>";
-		echo "<script>document.getElementById('loginError').style.visibility = 'visible';</script>"; 
-		
-		//After writing the error clear it so it won't show when the user reloads
-		echo $_SESSION['loginError'] = "";
-		echo $_SESSION['errorUserName'] = "";
-		echo $_SESSION['errorPassword'] = "";
-	} 
-	if(isset($_SESSION['signUpError']) && $_SESSION['signUpError'] != null) { 
-		//If 'loginError' is defined and not empty then open the login panel and show the error
-		echo "<script>signUpButton();</script>";
-		echo "<script>document.getElementById('signUpError').style.visibility = 'visible';</script>"; 
-		
-		//After writing the error clear it so it won't show when the user reloads
-		echo $_SESSION['signUpError'] = "";
-		echo $_SESSION['errorSUserName'] = "";
-		echo $_SESSION['errorSEmail'] = "";
-		echo $_SESSION['errorSPassword'] = "";
-		}*/
 	?> 
 
 <?php
@@ -134,46 +112,6 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['loginName']) && isset($_POST['loginPassword'])){
             	$name = $_POST['loginName'];
 				startSession($name);
-
-/* WE DONT NEED THIS AFTER THE AJAX IMPLEMENTATION
-            	$servername = "localhost";
-          		$username = "pma";
-         		$password = "";
-         		$dbname = "attb_db";
-
-         		$connection = mysqli_connect('localhost',$username,$password,$dbname);
-
-         		
-				$pass = $_POST['loginPassword'];
-
-				
-				//if there is not the user name
-				$myQuery = "SELECT * FROM users WHERE nickname = '$name'";
-				$result = mysqli_query($connection,$myQuery);
-				
-				if(mysqli_num_rows($result) <= 0){
-					$_SESSION['loginError'] = 'Wrong User Name!';
-					$_SESSION['errorUserName'] = $name;
-					$_SESSION['errorPassword'] = $pass;
-					header('Location: anaSayfa.php');
-	            	exit;
-				}
-				else {
-					$row = mysqli_fetch_assoc($result);
-					$dbpassword = $row['userpassword']; 
-					if($pass==$dbpassword){
-						//If the user logs in
-						startSession($name);
-	            	exit;
-					}
-					else{
-						$_SESSION['loginError'] = 'Wrong Password!';
-						$_SESSION['errorUserName'] = $name;
-						$_SESSION['errorPassword'] = $pass;
-						header('Location: anaSayfa.php');
-					}
-				}*/
-				
 				
 			}
 			
@@ -207,50 +145,6 @@
 				catch (PDOException $e) {
 					echo $sql . "<br>" . $e->getMessage();
 				}
-
-/* WE DONT NEED THIS AFTER THE AJAX IMPLEMENTATION
-				//Check for duplicate username or email.
-				$myQuery = "SELECT * FROM users WHERE nickname = '$name'";
-				$result = mysqli_query($connection,$myQuery);
-				$myQuery2 = "SELECT * FROM users WHERE email = '$email'";
-				$result2 = mysqli_query($connection,$myQuery2);
-				if(mysqli_num_rows($result) > 0){
-					$_SESSION['signUpError'] = 'Username already exists!';
-					$_SESSION['errorSUserName'] = $name;
-					$_SESSION['errorSEmail'] = $email;
-					$_SESSION['errorSPassword'] = $pass;
-					header('Location: anaSayfa.php');
-	            	exit;
-				}
-				else if(mysqli_num_rows($result2) > 0){
-					$_SESSION['signUpError'] = 'Email already exists!';
-					$_SESSION['errorSUserName'] = $name;
-					$_SESSION['errorSEmail'] = $email;
-					$_SESSION['errorSPassword'] = $pass;
-					header('Location: anaSayfa.php');
-					exit;
-
-				}
-				else{
-					try {
-						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);		
-		
-						$sql = "INSERT INTO users (nickname, email, userpassword) VALUES ('$name', '$email', '$pass')";
-						$conn->exec($sql);						
-						startSession($name);
-						header('Location: anaSayfa.php');
-		            	exit;
-
-					} 
-					catch (PDOException $e) {
-						echo $sql . "<br>" . $e->getMessage();
-					}
-					$conn = null;
-	          		$conn->exec($sql);
-
-          		}*/
-
             }
             //LOG IN HANDLER
             function startSession($name){

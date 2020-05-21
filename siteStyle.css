@@ -462,8 +462,9 @@ div#signUpError{
 }
 
 .pagePanel{
+    display: flex;
+    margin:auto; 
     margin-left:50%;
-    margin-top:50px;
     padding-bottom: 50px;
     transform: translate(-10%, -50%);
 }
@@ -473,7 +474,8 @@ div#signUpError{
  
 }
 
-.pageNo:hover{transform: scale(1.5);
+.pageNo:hover{
+    transform: scale(1.5);
     animation-fill-mode: both;
     -webkit-animation-name: yellowPulse;
     -webkit-animation-duration: 0.35s;
@@ -482,15 +484,12 @@ div#signUpError{
 
 }
 @-webkit-keyframes yellowPulse {
-   
     from { 
-        -webkit-box-shadow: 0 0 0 #3C1D00; 
-        font-size:30px;  
+        -webkit-box-shadow: 0 0 0 #3C1D00;  
          }
         
     to { 
         -webkit-box-shadow: 0 0 36px rgb(227, 216, 95);
-        font-size:40px;
          }
 }
 
@@ -499,3 +498,49 @@ div#signUpError{
     color:black;
 }
 
+.footer{
+    width:80%;
+    height:auto;
+    border:3px solid #888888;
+    background-image: linear-gradient(to bottom right, #142850, #27496d);
+    margin:20px auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display:flex;
+
+}
+
+.footerTable{
+    margin:auto;
+    color:#FFFFFF;
+    font-size: 20px;
+    text-align: center;
+    border-spacing: 60px 5px;
+    
+}
+
+.footerGlow{
+    transition: 0.50s ease;
+    -webkit-transition: 0.50s ease;
+    -moz-transition: 0.50s ease;
+
+}
+
+.footerGlow:hover{
+    animation-fill-mode: both;
+    -webkit-animation-name: footerPulse;
+    -webkit-animation-duration: 0.75s;
+    -webkit-animation-iteration-count: 1;
+    transform: scale(1.50);
+}
+
+@-webkit-keyframes footerPulse {
+   
+    from { 
+       text-shadow: 0 0 10px #0054FF,0 0 20px #0024FF ;
+         }
+        
+    to { 
+        text-shadow: 0 0 10px #FF3000,0 0 20px #FF0000 ;
+         }
+}
