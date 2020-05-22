@@ -20,7 +20,7 @@
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         try{
-        $filmsSql = "CREATE TABLE films (
+        $filmsSql = "CREATE TABLE IF NOT EXISTS films (
 
                id VARCHAR(50) PRIMARY KEY,
                 fname VARCHAR(50) NOT NULL,
@@ -40,7 +40,7 @@
          } catch (Exception $ex) {echo "films already exist";}
 
          try{
-        $ratingSql = "CREATE TABLE filmratings (
+        $ratingSql = "CREATE TABLE IF NOT EXISTS filmratings (
 
                 id INT(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                 cusername VARCHAR(50) NOT NULL,
@@ -53,7 +53,7 @@
         } catch (Exception $ex) {echo "comments already exist";}
 
         try{
-        $userSql = "CREATE TABLE users (
+        $userSql = "CREATE TABLE IF NOT EXISTS users (
 
                 id int(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,  
                 nickname VARCHAR(200) NOT NULL,        

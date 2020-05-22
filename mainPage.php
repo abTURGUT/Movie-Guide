@@ -6,10 +6,12 @@
         <link rel="stylesheet" type="text/css" href="siteStyle.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width = device-width, initial-scale =1.">
+		<?php include 'tableExistCheck.php';?>
 
 </head>
 
 <body id = 'body'>
+	
 	<?php
 		ob_start();
 			if (isset($_COOKIE['signedIn']) && $_COOKIE['signedIn'] == 1) {
