@@ -14,11 +14,9 @@
         $password = "";
         $dbName = "attb_db";
       
-        
-        
-        $con = new PDO("mysql:host=$servername;dbname=$dbName",$username,$password);
+        $con = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+
         try{
         $filmsSql = "CREATE TABLE IF NOT EXISTS films (
 
