@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<films>
+    <film>
+        <id>theDarkKnight2008</id>
+        <fname>The Dark Knight</fname>
+        <ftype>Action</ftype>
+        <fyear>2008</fyear>
+        <frate>4</frate>
+        <fratecount>10</fratecount>
+        <fdirector>Christopher Nolan</fdirector>
+        <fdescription>When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/EXeTwQWrcwY</ftrailer>
+        <fimage>darkknight.jpg</fimage>
+    </film>
+    <film>
+        <id>theGodfather1972</id>
+        <fname>The Godfather</fname>
+        <ftype>Drama</ftype>
+        <fyear>1972</fyear>
+        <frate>4.1</frate>
+        <fratecount>20</fratecount>
+        <fdirector>Francis Ford Coppola</fdirector>
+        <fdescription>The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/sY1S34973zA</ftrailer>
+        <fimage>thegodfather.jpg</fimage>
+    </film>
+    <film>
+        <id>pulpFiction1994</id>
+        <fname>Pulp Fiction</fname>
+        <ftype>Drama</ftype>
+        <fyear>1994</fyear>
+        <frate>3.5</frate>
+        <fratecount>5</fratecount>
+        <fdirector>Quentin Tarantino</fdirector>
+        <fdescription>The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/s7EdQ4FqbhY</ftrailer>
+        <fimage>pulpfiction.jpg</fimage>
+    </film>
+
+    <film>
+        <id>theLastSamurai2003</id>
+        <fname>The Last Samurai</fname>
+        <ftype>Action</ftype>
+        <fyear>2003</fyear>
+        <frate>4.2</frate>
+        <fratecount>17</fratecount>
+        <fdirector>Edward Zwick</fdirector>
+        <fdescription>An American military advisor embraces the Samurai culture he was hired to destroy after he is captured in battle.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/T50_qHEOahQ</ftrailer>
+        <fimage>thelastsamurai.jpg</fimage>
+    </film>
+    <film>
+        <id>theNotebook2004</id>
+        <fname>The Notebook</fname>
+        <ftype>Romance</ftype>
+        <fyear>2004</fyear>
+        <frate>3.4</frate>
+        <fratecount>12</fratecount>
+        <fdirector>Nick Cassavetes</fdirector>
+        <fdescription>A poor yet passionate young man falls in love with a rich young woman, giving her a sense of freedom, but they are soon separated because of their social differences.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/FC6biTjEyZw</ftrailer>
+        <fimage>thenotebook.jpg</fimage>
+    </film>
+    <film>
+        <id>jojoRabbit2019</id>
+        <fname>Jojo Rabbit</fname>
+        <ftype>Drama</ftype>
+        <fyear>2019</fyear>
+        <frate>3.8</frate>
+        <fratecount>4</fratecount>
+        <fdirector>Taika Waititi</fdirector>
+        <fdescription>A young boy in Hitlers army finds out his mother is hiding a Jewish girl in their home.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/tL4McUzXfFI</ftrailer>
+        <fimage>jojorabbit.jpg</fimage>
+    </film>
+    <film>
+        <id>johnWick2014</id>
+        <fname>John Wick</fname>
+        <ftype>Action</ftype>
+        <fyear>2014</fyear>
+        <frate>4.5</frate>
+        <fratecount>34</fratecount>
+        <fdirector>Chad Stahelski</fdirector>
+        <fdescription>An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/2AUmvWm5ZDQ</ftrailer>
+        <fimage>johnwick.jpg</fimage>
+    </film>
+    <film>
+        <id>joker2019</id>
+        <fname>Joker</fname>
+        <ftype>Drama</ftype>
+        <fyear>2019</fyear>
+        <frate>4.3</frate>
+        <fratecount>28</fratecount>
+        <fdirector>Tod Phillips</fdirector>
+        <fdescription>In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/zAGVQLHvwOY</ftrailer>
+        <fimage>joker.jpg</fimage>
+    </film>
+    <film>
+        <id>theConjuring2019</id>
+        <fname>The Conjuring</fname>
+        <ftype>Horror</ftype>
+        <fyear>2013</fyear>
+        <frate>2.9</frate>
+        <fratecount>6</fratecount>
+        <fdirector>James Wan</fdirector>
+        <fdescription>Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/k10ETZ41q5o</ftrailer>
+        <fimage>theconjuring.jpg</fimage>
+    </film>
+    <film>
+        <id>theConjuring20191</id>
+        <fname>The Conjuring</fname>
+        <ftype>Horror</ftype>
+        <fyear>2013</fyear>
+        <frate>3.1</frate>
+        <fratecount>3</fratecount>
+        <fdirector>James Wan</fdirector>
+        <fdescription>Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/k10ETZ41q5o</ftrailer>
+        <fimage>theconjuring.jpg</fimage>
+    </film>
+    <film>
+        <id>it2017</id>
+        <fname>It</fname>
+        <ftype>Horror</ftype>
+        <fyear>2017</fyear>
+        <frate>3.9</frate>
+        <fratecount>20</fratecount>
+        <fdirector>Andy Mushietti</fdirector>
+        <fdescription>In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/hAUTdjf9rko</ftrailer>
+        <fimage>it.jpg</fimage>
+    </film>
+    <film>
+        <id>theFaultInOurStars2014</id>
+        <fname>The Fault in our Stars</fname>
+        <ftype>Romance</ftype>
+        <fyear>2014</fyear>
+        <frate>2.5</frate>
+        <fratecount>3</fratecount>
+        <fdirector>Josh Boone</fdirector>
+        <fdescription>Two teenage cancer patients begin a life-affirming journey to visit a reclusive author in Amsterdam.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/9ItBvH5J6ss</ftrailer>
+        <fimage>thefaultinourstars.jpg</fimage>
+    </film>
+    <film>
+        <id>aboutTime2013</id>
+        <fname>About Time</fname>
+        <ftype>Romance</ftype>
+        <fyear>2013</fyear>
+        <frate>3</frate>
+        <fratecount>5</fratecount>
+        <fdirector>Richard Curtis</fdirector>
+        <fdescription>At the age of 21, Tim discovers he can travel in time and change what happens and has happened in his own life. His decision to make his world a better place by getting a girlfriend turns out not to be as easy as you might think.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/T7A810duHvw</ftrailer>
+        <fimage>abouttime.jpg</fimage>
+    </film>
+    <film>
+        <id>split2016</id>
+        <fname>Split</fname>
+        <ftype>Horror</ftype>
+        <fyear>2016</fyear>
+        <frate>3.4</frate>
+        <fratecount>10</fratecount>
+        <fdirector>M. Night Shyamalan</fdirector>
+        <fdescription>Three girls are kidnapped by a man with a diagnosed 23 distinct personalities. They must try to escape before the apparent emergence of a frightful new 24th.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/84TouqfIsiI</ftrailer>
+        <fimage>split.jpg</fimage>
+    </film>
+    <film>
+        <id>predestination2014</id>
+        <fname>Predestination</fname>
+        <ftype>Action</ftype>
+        <fyear>2014</fyear>
+        <frate>4</frate>
+        <fratecount>16</fratecount>
+        <fdirector>Michael Spierig, Peter Spierig</fdirector>
+        <fdescription>For his final assignment, a top temporal agent must pursue the one criminal that has eluded him throughout time. The chase turns into a unique, surprising and mind-bending exploration of love, fate, identity and time travel taboos.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/-FcK_UiVV40</ftrailer>
+        <fimage>predestination.jpg</fimage>
+    </film>
+    <film>
+        <id>thePrestige2016</id>
+        <fname>The Prestige</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2006</fyear>
+        <frate>4.3</frate>
+        <fratecount>21</fratecount>
+        <fdirector>Christopher Nolan</fdirector>
+        <fdescription>After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/ijXruSzfGEc</ftrailer>
+        <fimage>theprestige.jpg</fimage>
+    </film>
+    <film>
+        <id>interstellar2014</id>
+        <fname>Interstellar</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2014</fyear>
+        <frate>4.9</frate>
+        <fratecount>62</fratecount>
+        <fdirector>Christopher Nolan</fdirector>
+        <fdescription>A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/zSWdZVtXT7E</ftrailer>
+        <fimage>interstellar.jpg</fimage>
+    </film>
+    <film>
+        <id>theGreenMile1999</id>
+        <fname>The Green Mile</fname>
+        <ftype>Drama</ftype>
+        <fyear>1999</fyear>
+        <frate>4.7</frate>
+        <fratecount>87</fratecount>
+        <fdirector>Frank Darabont</fdirector>
+        <fdescription>The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/Ki4haFrqSrw</ftrailer>
+        <fimage>thegreenmile.jpg</fimage>
+    </film>
+    <film>
+        <id>theMatrix1999</id>
+        <fname>The Matrix</fname>
+        <ftype>Action</ftype>
+        <fyear>1999</fyear>
+        <frate>4.9</frate>
+        <fratecount>85</fratecount>
+        <fdirector>The Wachowski Brothers</fdirector>
+        <fdescription>A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/vKQi3bBA1y8</ftrailer>
+        <fimage>thematrix.jpg</fimage>
+    </film>
+    <film>
+        <id>scream1996</id>
+        <fname>Scream</fname>
+        <ftype>Horror</ftype>
+        <fyear>1996</fyear>
+        <frate>4.1</frate>
+        <fratecount>56</fratecount>
+        <fdirector>Wes Craven</fdirector>
+        <fdescription>A year after the murder of her mother, a teenage girl is terrorized by a new killer, who targets the girl and her friends by using horror films as part of a deadly game.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/23jmjs-rMGI</ftrailer>
+        <fimage>scream.jpg</fimage>
+    </film>
+    <film>
+        <id>transformersTheLastKnight2017</id>
+        <fname>Transformers The Last Knight</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2017</fyear>
+        <frate>4.3</frate>
+        <fratecount>55</fratecount>
+        <fdirector>Michael Bay</fdirector>
+        <fdescription>A deadly threat from Earths history reappears and a hunt for a lost artifact takes place between Autobots and Decepticons, while Optimus Prime encounters his creator in space.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/AntcyqJ6brc</ftrailer>
+        <fimage>transformersthelastknight.jpg</fimage>
+    </film>
+    <film>
+        <id>avengersEndgame2019</id>
+        <fname>Avengers Endgame</fname>
+        <ftype>Action</ftype>
+        <fyear>2019</fyear>
+        <frate>4.8</frate>
+        <fratecount>88</fratecount>
+        <fdirector>Anthony Russo,Joe Russo</fdirector>
+        <fdescription>After the devastating events of Avengers: Infinity Wars (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/TcMBFSGVi1c</ftrailer>
+        <fimage>avengersendgame.jpg</fimage>
+    </film>
+    <film>
+        <id>theMartian2015</id>
+        <fname>The Martian</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2015</fyear>
+        <frate>4</frate>
+        <fratecount>26</fratecount>
+        <fdirector>Ridley Scott</fdirector>
+        <fdescription>An astronaut becomes stranded on Mars after his team assume him dead, and must rely on his ingenuity to find a way to signal to Earth that he is alive.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/ej3ioOneTy8</ftrailer>
+        <fimage>themartian.jpg</fimage>
+    </film>
+    <film>
+        <id>eternalSunshineOfTheSpotlessMind2004</id>
+        <fname>Eternal Sunshine of the Spotless Mind</fname>
+        <ftype>Romance</ftype>
+        <fyear>2004</fyear>
+        <frate>3.7</frate>
+        <fratecount>20</fratecount>
+        <fdirector>Michel Gondry</fdirector>
+        <fdescription>When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/07-QBnEkgXU</ftrailer>
+        <fimage>eternalsunshineofthespotlessmind.jpg</fimage>
+    </film>
+    <film>
+        <id>silverLiningsPlaybook2012</id>
+        <fname>Silver Linings Playbook</fname>
+        <ftype>Romance</ftype>
+        <fyear>2012</fyear>
+        <frate>3.4</frate>
+        <fratecount>12</fratecount>
+        <fdirector>David O. Russell</fdirector>
+        <fdescription>After a stint in a mental institution, former teacher Pat Solitano moves back in with his parents and tries to reconcile with his ex-wife.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/Lj5_FhLaaQQ</ftrailer>
+        <fimage>silverliningsplaybook.jpg</fimage>
+    </film>
+    <film>
+        <id>edgeOfTomorrow2014</id>
+        <fname>Edge of Tomorrow</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2014</fyear>
+        <frate>3.9</frate>
+        <fratecount>25</fratecount>
+        <fdirector>Doug Liman</fdirector>
+        <fdescription>A soldier fighting aliens gets to relive the same day over and over again, the day restarting every time he dies.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/vw61gCe2oqI</ftrailer>
+        <fimage>edgeoftomorrow.jpg</fimage>
+    </film>
+    <film>
+        <id>aylaTheDaughterOfWar2017</id>
+        <fname>Ayla The Daughter of War</fname>
+        <ftype>Drama</ftype>
+        <fyear>2017</fyear>
+        <frate>4.2</frate>
+        <fratecount>36</fratecount>
+        <fdirector>Can Ulkay</fdirector>
+        <fdescription>In 1950, amid-st the ravages of the Korean War, Sergeant Süleyman stumbles upon a half-frozen little girl, with no parents and no help in sight...</fdescription>
+        <ftrailer>https://www.youtube.com/embed/8PELOIYaEiw</ftrailer>
+        <fimage>aylathedaughterofwar.jpg</fimage>
+    </film>
+    <film>
+        <id>beforeMidnight2013</id>
+        <fname>Before Midnight</fname>
+        <ftype>Romance</ftype>
+        <fyear>2013</fyear>
+        <frate>4.4</frate>
+        <fratecount>33</fratecount>
+        <fdirector>Richard Linklater</fdirector>
+        <fdescription>We meet Jesse and Celine nine years on in Greece. Almost two decades have passed since their first meeting on that train bound for Vienna.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/Kv6JWoVKlGY</ftrailer>
+        <fimage>beforemidnight.jpg</fimage>
+    </film>
+    <film>
+        <id>constantine2005</id>
+        <fname>Constantine</fname>
+        <ftype>Horror</ftype>
+        <fyear>2005</fyear>
+        <frate>4.9</frate>
+        <fratecount>9</fratecount>
+        <fdirector>Francis Lawrence</fdirector>
+        <fdescription>Supernatural exorcist and demonologist John Constantine helps a policewoman prove her sisters death was not a suicide, but something more.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/DEa508Xmmio</ftrailer>
+        <fimage>constantine.jpg</fimage>
+    </film>
+    <film>
+        <id>annihilation2018</id>
+        <fname>Annihilation</fname>
+        <ftype>Science Fiction</ftype>
+        <fyear>2018</fyear>
+        <frate>3.8</frate>
+        <fratecount>14</fratecount>
+        <fdirector>Alex Garland</fdirector>
+        <fdescription>A biologist signs up for a dangerous, secret expedition into a mysterious zone where the laws of nature dont apply.</fdescription>
+        <ftrailer>https://www.youtube.com/embed/89OP78l9oF0</ftrailer>
+        <fimage>annihilation.jpg</fimage>
+    </film>
+</films>
